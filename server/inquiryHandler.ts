@@ -9,8 +9,8 @@ const ipRateLimits = new Map<string, RateRecord>();
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
 const MAX_REQUESTS_PER_WINDOW = 5;
 
-// Clean expired rate limits periodically
-setInterval(() => {
+// Clean expired rate limits periodically (unref so it does not block process exit during build)
+const timer = setInterval(() => {
   const now = Date.now();
   for (const [ip, record] of ipRateLimits.entries()) {
     if (now - record.startTime > RATE_LIMIT_WINDOW_MS) {
@@ -18,6 +18,10 @@ setInterval(() => {
     }
   }
 }, 60 * 1000);
+
+if (timer && typeof timer.unref === 'function') {
+  timer.unref();
+}
 
 export function handleInquirySubmission(req: IncomingMessage, res: ServerResponse): void {
   if (req.method !== 'POST') {

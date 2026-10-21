@@ -28,18 +28,22 @@ const apiPlugin = () => ({
 });
 
 // https://vite.dev/config/
-export default defineConfig({
-  server: {
-    port: 5173,
-    host: true,
-  },
-  preview: {
-    port: 5173,
-    host: true,
-  },
-  plugins: [
-    react(),
-    tailwindcss(),
-    apiPlugin(),
-  ],
+export default defineConfig(({ command }) => {
+  const plugins: any[] = [react(), tailwindcss()];
+
+  if (command === 'serve') {
+    plugins.push(apiPlugin());
+  }
+
+  return {
+    server: {
+      port: 5173,
+      host: true,
+    },
+    preview: {
+      port: 5173,
+      host: true,
+    },
+    plugins,
+  };
 })
