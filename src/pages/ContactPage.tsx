@@ -18,6 +18,7 @@ export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     organization: '',
+    country: '',
     email: '',
     subject: '',
     message: '',
@@ -55,6 +56,7 @@ export const ContactPage: React.FC = () => {
           formType: 'contact',
           name: formData.name,
           organization: formData.organization,
+          country: formData.country,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
@@ -98,6 +100,7 @@ export const ContactPage: React.FC = () => {
     const text = `PMSI Contact Message Summary:
 Name: ${formData.name}
 Organization: ${formData.organization || 'N/A'}
+Country: ${formData.country || 'N/A'}
 Email: ${formData.email}
 Subject: ${formData.subject}
 Message:
@@ -340,6 +343,23 @@ ${formData.message}`;
                   </div>
 
                   <div>
+                    <label htmlFor="country" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                      Country of Operation / Residence *
+                    </label>
+                    <input
+                      type="text"
+                      id="country"
+                      required
+                      value={formData.country}
+                      onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                      placeholder="e.g. United Kingdom, Pakistan, USA"
+                      className="w-full px-4 py-2.5 rounded-lg border border-slate-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#167E83]"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
                     <label htmlFor="organization" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                       Organization / Foundation Name
                     </label>
@@ -352,9 +372,7 @@ ${formData.message}`;
                       className="w-full px-4 py-2.5 rounded-lg border border-slate-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#167E83]"
                     />
                   </div>
-                </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="email" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
                       Professional Email Address *
@@ -369,21 +387,21 @@ ${formData.message}`;
                       className="w-full px-4 py-2.5 rounded-lg border border-slate-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#167E83]"
                     />
                   </div>
+                </div>
 
-                  <div>
-                    <label htmlFor="subject" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
-                      Subject *
-                    </label>
-                    <input
-                      type="text"
-                      id="subject"
-                      required
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      placeholder="e.g. General Inquiry on PMSI Humanitarian Priorities"
-                      className="w-full px-4 py-2.5 rounded-lg border border-slate-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#167E83]"
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="subject" className="block text-xs font-semibold text-slate-700 uppercase tracking-wider mb-1.5">
+                    Subject *
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    required
+                    value={formData.subject}
+                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                    placeholder="e.g. General Inquiry on PMSI Humanitarian Priorities"
+                    className="w-full px-4 py-2.5 rounded-lg border border-slate-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-[#167E83]"
+                  />
                 </div>
 
                 <div>

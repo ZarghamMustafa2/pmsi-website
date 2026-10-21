@@ -14,6 +14,7 @@ import {
   ArrowRight,
   Sparkles,
   CheckCircle2,
+  UserCheck,
 } from 'lucide-react';
 
 export const TransparencyPage: React.FC = () => {
@@ -207,6 +208,26 @@ export const TransparencyPage: React.FC = () => {
               </p>
             </div>
           </div>
+
+          {/* Verified Leadership Transparency Box */}
+          <div className="mt-8 p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-[#167E83]/10 border border-[#167E83]/20 flex items-center justify-center text-[#167E83] shrink-0 mt-0.5">
+                <UserCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-serif text-base font-bold text-[#12304A]">
+                  Verified Initiative Leadership
+                </h4>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mt-1">
+                  PMSI is founded and coordinated by <strong>Zargham Mustafa</strong> (Founder & Initiative Lead).
+                  In adherence to our strict transparency mandate, we do not publish fictional board rosters. An
+                  independent multi-disciplinary advisory board is currently being convened in conjunction with our
+                  non-profit statutory registration.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Section B — Financial Accountability */}
@@ -359,6 +380,107 @@ export const TransparencyPage: React.FC = () => {
                 Sikh) and transgender citizens. We strictly avoid publishing identifying addresses, facial photographs,
                 or sensitive personal disclosures that could expose individuals to localized harm.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section F — Non-Discrimination Policy */}
+        <section className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-sm">
+          <div className="max-w-3xl mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-[#167E83]">
+                Section F
+              </span>
+            </div>
+            <h2 className="font-serif text-3xl font-semibold text-[#12304A] mb-4">
+              Non-Discrimination & Equal Treatment
+            </h2>
+            <div className="w-16 h-1 bg-[#167E83] rounded-full mb-4" />
+            <p className="text-slate-600 leading-relaxed text-base">
+              PMSI operates on the strict conviction that humanitarian support must never be conditional upon religious
+              affiliation, ethnicity, social caste, or gender identity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-slate-700 leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 space-y-2">
+              <h4 className="font-bold text-[#12304A]">Needs-Based Aid Delivery</h4>
+              <p>
+                All humanitarian assistance, educational sponsorships, and emergency flood relief packages are distributed
+                strictly on verified vulnerability criteria. No beneficiary is ever prioritized or excluded on the basis of
+                faith or creed.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 space-y-2">
+              <h4 className="font-bold text-[#12304A]">Respect for Religious Identity</h4>
+              <p>
+                We do not condition aid upon religious conformity or participation in any faith activities. We defend the
+                freedom of conscience and peaceful worship of Christian, Ahmadi, Hindu, Sikh, and all communities.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Section G — Partnership Inquiry & Institutional Procedures */}
+        <section className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-sm">
+          <div className="max-w-3xl mb-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-[#167E83]">
+                Section G
+              </span>
+            </div>
+            <h2 className="font-serif text-3xl font-semibold text-[#12304A] mb-4">
+              Partnership Inquiry & Collaboration Procedures
+            </h2>
+            <div className="w-16 h-1 bg-[#167E83] rounded-full mb-4" />
+            <p className="text-slate-600 leading-relaxed text-base">
+              To ensure full compliance and institutional integrity, international organizations and foundations engage
+              with PMSI through a clear, transparent four-stage exploratory framework:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
+              <div>
+                <span className="font-mono text-xs font-bold text-[#167E83] uppercase tracking-wider block mb-2">Stage 01</span>
+                <h4 className="font-serif text-base font-bold text-[#12304A] mb-2">Initial Inquiry</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  International partner submits formal interest via the Partnership Inquiry portal or official correspondence.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
+              <div>
+                <span className="font-mono text-xs font-bold text-[#167E83] uppercase tracking-wider block mb-2">Stage 02</span>
+                <h4 className="font-serif text-base font-bold text-[#12304A] mb-2">Concept Dialogue</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Bilateral review of proposed project scopes, target beneficiary contexts, safeguarding standards, and terms of reference.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
+              <div>
+                <span className="font-mono text-xs font-bold text-[#167E83] uppercase tracking-wider block mb-2">Stage 03</span>
+                <h4 className="font-serif text-base font-bold text-[#12304A] mb-2">Due Diligence Review</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Mutual transparency sharing covering organizational stage, compliance status, and prospective governance architecture.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
+              <div>
+                <span className="font-mono text-xs font-bold text-[#167E83] uppercase tracking-wider block mb-2">Stage 04</span>
+                <h4 className="font-serif text-base font-bold text-[#12304A] mb-2">Formal Execution</h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Execution of formal grant agreements and fund disbursement occurs upon verified completion of statutory non-profit banking registration.
+                </p>
+              </div>
             </div>
           </div>
         </section>

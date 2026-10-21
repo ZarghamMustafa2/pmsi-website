@@ -16,6 +16,9 @@ import {
   Sparkles,
   Handshake,
   Compass,
+  MapPin,
+  UserCheck,
+  Building2,
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
@@ -395,6 +398,225 @@ export const AboutPage: React.FC = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Section F: Intended Geographical Focus in Pakistan */}
+      <section className="py-20 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
+              <MapPin className="w-4 h-4 text-[#167E83]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-[#167E83]">
+                Geographic Scope
+              </span>
+            </div>
+
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#12304A] leading-tight mb-5">
+              Intended Geographical Focus in Pakistan
+            </h2>
+
+            <div className="w-20 h-1 bg-gradient-to-r from-[#167E83] to-[#D8A85B] rounded-full mb-6" />
+
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+              PMSI’s planned humanitarian programs and advocacy priorities are structured to address critical
+              vulnerabilities across targeted provinces and administrative regions of Pakistan.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-4 shadow-xs">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-xl font-semibold text-[#12304A] mb-2">
+                  Punjab Province
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Focus on urban and peri-urban minority settlements, educational access for children of informal
+                  and bonded labor families, and community protection advocacy in major population centers.
+                </p>
+              </div>
+              <div className="pt-4 mt-6 border-t border-slate-200/60 text-xs font-semibold text-[#167E83]">
+                Education & Community Protection
+              </div>
+            </div>
+
+            <div className="p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-4 shadow-xs">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-xl font-semibold text-[#12304A] mb-2">
+                  Sindh Province
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Focus on agrarian minority populations, flood-displaced rural communities, clean drinking water access,
+                  and legal protection for vulnerable Hindu and marginalized minority households in lower and upper Sindh.
+                </p>
+              </div>
+              <div className="pt-4 mt-6 border-t border-slate-200/60 text-xs font-semibold text-[#167E83]">
+                Flood Relief & Agrarian Rights
+              </div>
+            </div>
+
+            <div className="p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-4 shadow-xs">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-xl font-semibold text-[#12304A] mb-2">
+                  Khyber Pakhtunkhwa & Remote Areas
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Support for historical minority enclaves, including Sikh and Christian communities, emergency winter
+                  relief for impoverished families, and local civic empowerment.
+                </p>
+              </div>
+              <div className="pt-4 mt-6 border-t border-slate-200/60 text-xs font-semibold text-[#167E83]">
+                Historic Enclaves & Winterization
+              </div>
+            </div>
+
+            <div className="p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-4 shadow-xs">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <h3 className="font-serif text-xl font-semibold text-[#12304A] mb-2">
+                  Nationwide Scope
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Systemic constitutional advocacy, national transgender inclusion initiatives, interfaith dialogue
+                  platforms, and emergency referral mechanisms operating across administrative borders.
+                </p>
+              </div>
+              <div className="pt-4 mt-6 border-t border-slate-200/60 text-xs font-semibold text-[#167E83]">
+                Rights Advocacy & Interfaith Accord
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section G: Initiative Leadership & Institutional Accountability */}
+      <section className="py-20 bg-[#F7F9FA] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
+              <UserCheck className="w-4 h-4 text-[#167E83]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-[#167E83]">
+                Governance & Accountability
+              </span>
+            </div>
+
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#12304A] leading-tight mb-5">
+              Initiative Leadership & Governance
+            </h2>
+
+            <div className="w-20 h-1 bg-gradient-to-r from-[#167E83] to-[#D8A85B] rounded-full mb-6" />
+
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+              PMSI maintains transparent leadership reporting. In strict adherence to international credibility
+              standards, we provide verified information regarding who is responsible for the initiative without
+              unverified appointments or fabricated board credentials.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            {/* Leadership Profile */}
+            <div className="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-3.5 mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-[#167E83]/10 border border-[#167E83]/20 flex items-center justify-center text-[#167E83] shrink-0 font-serif text-2xl font-bold">
+                    ZM
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#167E83] block">
+                      Founder & Initiative Lead
+                    </span>
+                    <h3 className="font-serif text-2xl font-bold text-[#12304A]">
+                      Zargham Mustafa
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="space-y-3.5 text-sm text-slate-700 leading-relaxed">
+                  <p>
+                    Zargham Mustafa serves as the Founder and Initiative Lead for the Pakistan Minorities Support
+                    Initiative (PMSI), providing strategic oversight, programmatic vision, and community coordination.
+                  </p>
+                  <p>
+                    Under his leadership, PMSI was initiated to champion the fundamental rights, dignity, and
+                    equal opportunities of Pakistan’s religious minorities, transgender individuals, and crisis-affected
+                    children through principled and transparent humanitarian collaboration.
+                  </p>
+                  <p>
+                    He directly oversees institutional communication, formal correspondence with prospective funding
+                    partners, and the ongoing procedural requirements for PMSI’s non-profit statutory registration in Pakistan.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-semibold text-slate-500">
+                <Building2 className="w-4 h-4 text-[#167E83]" />
+                <span>Executive Responsibility & Institutional Representation</span>
+              </div>
+            </div>
+
+            {/* Advisory & Governance Formation Status */}
+            <div className="p-8 sm:p-10 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/30 shadow-xl flex flex-col justify-between relative overflow-hidden">
+              <div
+                className="absolute -top-16 -right-16 w-48 h-48 bg-[#167E83]/20 rounded-full blur-2xl pointer-events-none"
+                aria-hidden="true"
+              />
+
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-[#D8A85B] shrink-0">
+                    <ShieldCheck className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#D8A85B] block">
+                      Institutional Governance
+                    </span>
+                    <h3 className="font-serif text-xl sm:text-2xl font-semibold text-white">
+                      Advisory Board in Formation
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="space-y-4 text-sm text-slate-200 leading-relaxed font-normal">
+                  <p>
+                    As PMSI completes its formal statutory non-profit registration process, an independent Advisory
+                    Committee and formal Board of Directors are currently being structured.
+                  </p>
+                  <p>
+                    The proposed governance framework comprises representatives from human rights organizations, legal
+                    scholars, education specialists, and community elders from Christian, Ahmadi, Hindu, and Sikh
+                    communities.
+                  </p>
+                  <div className="p-4 rounded-xl bg-white/5 border border-white/10 text-xs text-slate-300">
+                    <strong>Transparency Commitment:</strong> In accordance with our non-negotiable credibility standards,
+                    PMSI strictly does not publish unverified appointments, stock photography, or artificial board rosters
+                    until legal formalities have been officially finalized.
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-6 mt-6 border-t border-white/10 flex items-center justify-between text-xs text-slate-300">
+                <span>Governance Protocol</span>
+                <Link
+                  to="/transparency"
+                  className="inline-flex items-center gap-1.5 text-[#D8A85B] hover:text-white font-semibold transition-colors"
+                >
+                  <span>Review Governance Commitments</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Action CTAs */}

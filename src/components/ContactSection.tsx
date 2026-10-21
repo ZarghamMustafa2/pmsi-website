@@ -17,6 +17,7 @@ export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     organization: '',
+    country: '',
     category: 'Philanthropic Foundation / Donor',
     email: '',
     subject: '',
@@ -55,6 +56,7 @@ export const ContactSection: React.FC = () => {
           formType: 'contact',
           name: formData.name,
           organization: formData.organization,
+          country: formData.country,
           category: formData.category,
           email: formData.email,
           subject: formData.subject,
@@ -99,6 +101,7 @@ export const ContactSection: React.FC = () => {
     const text = `PMSI Inquiry Summary:
 Name: ${formData.name}
 Organization: ${formData.organization || 'N/A'}
+Country: ${formData.country || 'N/A'}
 Category: ${formData.category}
 Email: ${formData.email}
 Subject: ${formData.subject}
@@ -115,6 +118,7 @@ ${formData.message}`;
     setFormData({
       name: '',
       organization: '',
+      country: '',
       category: 'Philanthropic Foundation / Donor',
       email: '',
       subject: '',
@@ -347,6 +351,23 @@ ${formData.message}`;
                       />
                     </div>
 
+                    <div>
+                      <label htmlFor="country" className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
+                        Country of Operation / Residence *
+                      </label>
+                      <input
+                        type="text"
+                        id="country"
+                        required
+                        value={formData.country}
+                        onChange={(e) => setFormData({ ...formData, country: e.target.value })}
+                        placeholder="e.g. United Kingdom, Pakistan, USA"
+                        className="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#167E83] focus:border-transparent transition-all shadow-xs"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="organization" className="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">
                         Organization Name *

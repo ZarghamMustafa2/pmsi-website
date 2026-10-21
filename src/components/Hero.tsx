@@ -51,8 +51,8 @@ export const Hero: React.FC = () => {
           {/* Refined Supporting Description */}
           <p className="text-base sm:text-lg md:text-xl text-slate-200 font-normal leading-relaxed max-w-3xl mx-auto mb-10 text-balance">
             Pakistan Minorities Support Initiative (PMSI) is dedicated to advancing the rights, dignity
-            and inclusion of religious minorities and vulnerable communities across Pakistan through
-            humanitarian advocacy, educational opportunity and community-focused initiatives.
+            and protection of religious minorities—including Christian, Ahmadi, Hindu, and Sikh
+            communities—alongside transgender inclusion, child welfare, and flood relief across Pakistan.
           </p>
 
           {/* Action CTAs (Exact button texts from specification) */}
