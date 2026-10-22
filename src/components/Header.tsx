@@ -34,6 +34,17 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // Close mobile menu on desktop resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // Prevent background scrolling when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -41,6 +52,9 @@ export const Header: React.FC = () => {
     } else {
       document.body.style.overflow = '';
     }
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isMobileMenuOpen]);
 
   // Close mobile menu on route change (official React state adjustment during render)
@@ -73,7 +87,7 @@ export const Header: React.FC = () => {
           : 'bg-[#12304A] border-b border-white/5 py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-50 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo & Full Organization Name */}
           <Logo variant="light" />
@@ -129,13 +143,17 @@ export const Header: React.FC = () => {
         <>
           {/* Backdrop overlay for tap-to-dismiss */}
           <div
-            className="lg:hidden fixed inset-0 top-full bg-black/60 backdrop-blur-xs z-40 transition-opacity"
+            className="lg:hidden fixed inset-0 bg-black/60 backdrop-blur-xs z-40 transition-opacity"
             onClick={() => setIsMobileMenuOpen(false)}
             aria-hidden="true"
           />
 
-          <div className="lg:hidden fixed inset-x-0 top-full bg-[#12304A]/98 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300 z-50">
-            <div className="px-5 pt-4 pb-6 space-y-1.5 max-h-[calc(100vh-5rem)] overflow-y-auto">
+          {/* Mobile Navigation Drawer */}
+          <nav
+            aria-label="Mobile Navigation"
+            className="lg:hidden absolute top-full left-0 right-0 bg-[#12304A] border-b border-white/10 shadow-2xl z-50 transition-all duration-200"
+          >
+            <div className="px-5 pt-4 pb-6 space-y-1.5 max-h-[calc(100vh-5rem)] overflow-y-auto overscroll-contain">
               <div className="py-2.5 mb-2 border-b border-white/10">
                 <span className="text-xs uppercase tracking-widest text-[#D8A85B] font-semibold flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-[#D8A85B]" />
@@ -181,7 +199,7 @@ export const Header: React.FC = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </nav>
         </>
       )}
     </header>
