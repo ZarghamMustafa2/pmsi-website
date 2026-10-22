@@ -130,6 +130,32 @@ export const ProjectDetailPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Main Editorial Content (8 cols) */}
           <div className="lg:col-span-8 space-y-10">
+            {/* Formal Proposal Dossier Callout Banner (if proposal available) */}
+            {project.proposalAvailable && (
+              <section className="bg-gradient-to-r from-[#12304A] to-[#164366] text-white p-7 sm:p-8 rounded-2xl border border-[#D8A85B]/40 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                <div className="space-y-2">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D8A85B]/20 border border-[#D8A85B]/40 text-[#D8A85B] text-xs font-bold uppercase tracking-wider">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>Official Funding Proposal Available</span>
+                  </div>
+                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                    Complete 14-Section Proposal Dossier
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-200 leading-relaxed max-w-xl">
+                    Review the verified USD {project.fundingAmountUSD ? `$${project.fundingAmountUSD.toLocaleString()}` : '30,000'} line-item budget breakdown, 12-month implementation timeline, and institutional safeguarding framework.
+                  </p>
+                </div>
+                <Link
+                  to={`/projects/${project.slug}/proposal`}
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold text-[#12304A] bg-[#D8A85B] hover:bg-[#ECD29E] transition-all shadow-md shrink-0 font-medium"
+                >
+                  <FileText className="w-4 h-4" />
+                  <span>Read Full Proposal</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </section>
+            )}
+
             {/* 1. Humanitarian Background */}
             <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
               <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#167E83]">
@@ -283,10 +309,14 @@ export const ProjectDetailPage: React.FC = () => {
                   Funding Requirement
                 </span>
                 <span className="font-serif text-base font-bold text-[#12304A] block">
-                  {project.fundingRequirement}
+                  {project.fundingAmountUSD
+                    ? `USD $${project.fundingAmountUSD.toLocaleString()}`
+                    : project.fundingRequirement}
                 </span>
                 <p className="text-[11px] text-slate-500 leading-relaxed pt-1">
-                  Budget formulated collaboratively upon bilateral concept note review. No arbitrary estimates.
+                  {project.fundingAmountUSD
+                    ? 'Formal line-item 12-month budget fully structured in the official proposal dossier.'
+                    : 'Budget formulated collaboratively upon bilateral concept note review. No arbitrary estimates.'}
                 </p>
               </div>
             </div>
@@ -323,13 +353,15 @@ export const ProjectDetailPage: React.FC = () => {
                 {/* Secondary Button: View Project Proposal */}
                 <div className="pt-1">
                   {project.proposalAvailable ? (
-                    <button
-                      type="button"
-                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-colors"
+                    <Link
+                      to={`/projects/${project.slug}/proposal`}
+                      className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/30 hover:border-[#D8A85B] transition-all shadow-xs"
                     >
-                      <FileText className="w-4 h-4 text-slate-300" />
-                      <span>View Project Proposal</span>
-                    </button>
+                      <FileText className="w-4 h-4 text-[#D8A85B]" />
+                      <span>
+                        View Project Proposal {project.fundingAmountUSD ? `(USD $${project.fundingAmountUSD.toLocaleString()})` : ''}
+                      </span>
+                    </Link>
                   ) : (
                     <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-center">
                       <span className="text-[11px] text-slate-300 block font-medium">

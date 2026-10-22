@@ -9,6 +9,7 @@ import { ProgramsPage } from './pages/ProgramsPage';
 import { ProgramDetailPage } from './pages/ProgramDetailPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { ProjectDetailPage } from './pages/ProjectDetailPage';
+import { ProjectProposalPage } from './pages/ProjectProposalPage';
 import { PartnerWithUsPage } from './pages/PartnerWithUsPage';
 import { FundingOpportunitiesPage } from './pages/FundingOpportunitiesPage';
 import { PartnershipInquiryPage } from './pages/PartnershipInquiryPage';
@@ -45,6 +46,7 @@ export const App: React.FC = () => {
             {/* Route: Our Humanitarian Projects */}
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectDetailPage />} />
+            <Route path="/projects/:slug/proposal" element={<ProjectProposalPage />} />
 
             {/* Route: International Partnerships */}
             <Route path="/partner-with-us" element={<PartnerWithUsPage />} />
