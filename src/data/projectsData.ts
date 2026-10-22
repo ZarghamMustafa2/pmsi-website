@@ -93,6 +93,21 @@ export interface Project {
   proposalNote?: string;
   publicationVisibility: boolean;
   proposal?: ProjectProposal;
+  corporatePhilanthropy?: CorporatePhilanthropySection;
+}
+
+export interface CorporatePhilanthropyTarget {
+  name: string;
+  focusArea: string;
+  alignment: string;
+  officialUrl: string;
+}
+
+export interface CorporatePhilanthropySection {
+  title: string;
+  description: string;
+  disclaimer: string;
+  targets: CorporatePhilanthropyTarget[];
 }
 
 export const educationProposalData: ProjectProposal = {
@@ -468,6 +483,50 @@ export const projectsData: Project[] = [
     proposalNote: 'Complete 14-section project funding proposal document verified and available for institutional download and review.',
     publicationVisibility: true,
     proposal: educationProposalData,
+    corporatePhilanthropy: {
+      title: 'U.S. Corporate Philanthropy & Funding Opportunities',
+      description:
+        'Pakistan Minorities Support Initiative (PMSI) actively welcomes prospective collaboration, institutional grant inquiries, and bilateral partnerships with U.S.-based corporate giving programs, CSR initiatives, and philanthropic foundations committed to educational equity, child welfare, and poverty alleviation in developing nations.',
+      disclaimer:
+        'IMPORTANT PROSPECTIVE RESEARCH & NON-AFFILIATION NOTICE: The organizations listed below represent prospective institutional funding targets identified through humanitarian research on corporate philanthropy priorities. These entities are NOT existing PMSI donors, sponsors, grantors, or partners. This presentation does not imply any endorsement, grant award, partnership commitment, or formal relationship between PMSI and these organizations. Company and foundation names, along with links to their official funding programs, are provided solely as prospective research references for international philanthropic alignment.',
+      targets: [
+        {
+          name: 'Google.org',
+          focusArea: 'Education Equity, Foundational Learning & Digital Inclusion',
+          alignment:
+            'Supports initiatives expanding educational access for underserved youth, closing the digital divide, and providing equitable learning opportunities to vulnerable communities.',
+          officialUrl: 'https://www.google.org/',
+        },
+        {
+          name: 'Microsoft Philanthropies',
+          focusArea: 'Digital Skills, Youth Opportunity & Humanitarian Inclusion',
+          alignment:
+            'Focuses on empowering non-profit organizations that deliver digital literacy, basic educational skills, and opportunities to marginalized youth and vulnerable minority populations.',
+          officialUrl: 'https://www.microsoft.com/en-us/corporate-responsibility/philanthropies',
+        },
+        {
+          name: 'Cisco Foundation',
+          focusArea: 'Global Impact Cash Grants, Education & Economic Empowerment',
+          alignment:
+            'Provides funding for innovative programs that expand access to education, build digital and vocational capacity, and support underserved communities worldwide.',
+          officialUrl: 'https://www.cisco.com/c/en/us/about/csr/community/nonprofits/grant-programs.html',
+        },
+        {
+          name: 'The Coca-Cola Foundation',
+          focusArea: 'Community Well-Being, Youth Empowerment & Education',
+          alignment:
+            'Directs charitable grant funding toward grassroots community resilience, youth development, education, and social empowerment programs for marginalized populations globally.',
+          officialUrl: 'https://www.coca-colacompany.com/about-us/people-and-communities/the-coca-cola-foundation',
+        },
+        {
+          name: 'PepsiCo Foundation',
+          focusArea: 'Community Resilience, Education & Youth Economic Opportunity',
+          alignment:
+            'Invests in high-impact programs designed to break cycles of poverty through educational access, youth skills development, and community support in emerging economies.',
+          officialUrl: 'https://www.pepsico.com/about/social-impact',
+        },
+      ],
+    },
   },
 
   // PROJECT 03: FLOOD RELIEF & DISASTER RESILIENCE

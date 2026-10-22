@@ -580,6 +580,24 @@ export const ProjectProposalPage: React.FC = () => {
               <p className="text-xs text-slate-500 italic pt-1">
                 {proposal.partnershipRequest.conditionNote}
               </p>
+
+              <div className="p-4 rounded-xl bg-[#F7F9FA] border border-slate-200 space-y-2 mt-3">
+                <span className="font-bold text-[#12304A] block text-xs uppercase tracking-wider">
+                  U.S. Corporate Philanthropy & Funding Opportunities (Research Alignment):
+                </span>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  PMSI welcomes prospective dialogue with U.S.-based corporate giving programs and philanthropic foundations (including prospective research targets such as Google.org, Microsoft Philanthropies, Cisco Foundation, The Coca-Cola Foundation, and PepsiCo Foundation). <em>Notice: These entities represent prospective institutional research references only; no formal partnership, endorsement, or donor relationship is implied.</em>
+                </p>
+                <div className="pt-1">
+                  <Link
+                    to={`/projects/${project.slug}`}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#167E83] hover:underline print:hidden"
+                  >
+                    <span>View U.S. Corporate Philanthropy Directory on Project Page</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </section>
 

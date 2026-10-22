@@ -16,6 +16,9 @@ import {
   ArrowLeft,
   Calendar,
   Layers,
+  Building2,
+  ExternalLink,
+  ShieldAlert,
 } from 'lucide-react';
 
 export const ProjectDetailPage: React.FC = () => {
@@ -89,7 +92,9 @@ export const ProjectDetailPage: React.FC = () => {
               {isUpcoming && (
                 <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 border border-amber-400/40 text-[#ECD29E]">
                   <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
-                  <span>Status: Funding Required</span>
+                  <span>
+                    Status: Funding Required {project.fundingAmountUSD ? `(USD $${project.fundingAmountUSD.toLocaleString()})` : ''}
+                  </span>
                 </span>
               )}
 
@@ -121,6 +126,26 @@ export const ProjectDetailPage: React.FC = () => {
             <p className="text-base sm:text-lg md:text-xl text-slate-200 leading-relaxed font-normal max-w-3xl pt-2">
               {project.summary}
             </p>
+
+            {/* Quick Strategic Dossier Summary */}
+            <div className="flex flex-wrap items-center gap-y-2 gap-x-4 pt-4 border-t border-white/10 text-xs">
+              <div className="flex items-center gap-2">
+                <span className="text-slate-400">Total Funding Required:</span>
+                <span className="font-bold text-[#D8A85B] text-sm">
+                  {project.fundingAmountUSD ? `USD $${project.fundingAmountUSD.toLocaleString()}` : project.fundingRequirement}
+                </span>
+              </div>
+              <span className="text-white/20 hidden sm:inline">•</span>
+              <div className="flex items-center gap-2">
+                <span className="text-slate-400">Target Beneficiaries:</span>
+                <span className="font-semibold text-white">{project.communityBeneficiary}</span>
+              </div>
+              <span className="text-white/20 hidden sm:inline">•</span>
+              <div className="flex items-center gap-2">
+                <span className="text-slate-400">Location:</span>
+                <span className="font-semibold text-white">{project.location}</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -201,10 +226,10 @@ export const ProjectDetailPage: React.FC = () => {
             <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
               <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#167E83]">
                 <Calendar className="w-4 h-4" />
-                <span>{isCompleted ? 'Completed Activities' : 'Planned Activities'}</span>
+                <span>{isCompleted ? 'Delivered Interventions' : 'Proposed Educational Activities'}</span>
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#12304A]">
-                {isCompleted ? 'Delivered Interventions' : 'Planned Operational Activities'}
+                {isCompleted ? 'Delivered Interventions' : 'Proposed Educational & Community Activities'}
               </h2>
               <div className="space-y-3 pt-1">
                 {project.activities.map((act, idx) => (
@@ -227,10 +252,10 @@ export const ProjectDetailPage: React.FC = () => {
             <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
               <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#D8A85B]">
                 <Sparkles className="w-4 h-4" />
-                <span>{isCompleted ? 'Verified Outcomes' : 'Expected Social Impact'}</span>
+                <span>{isCompleted ? 'Verified Outcomes' : 'Expected Outcomes & Social Impact'}</span>
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#12304A]">
-                {isCompleted ? 'Verified Results' : 'Expected Outcomes'}
+                {isCompleted ? 'Verified Results' : 'Expected Humanitarian Outcomes'}
               </h2>
               <div className="space-y-3 pt-1">
                 {(project.expectedOutcomes || project.verifiedResults || []).map((outcome, idx) => (
@@ -246,6 +271,129 @@ export const ProjectDetailPage: React.FC = () => {
                 ))}
               </div>
             </section>
+
+            {/* 5. U.S. Corporate Philanthropy & Funding Opportunities (Informational Research Directory) */}
+            {project.corporatePhilanthropy && (
+              <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-8">
+                {/* Header & Context */}
+                <div className="space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#12304A]/10 text-[#12304A]">
+                      <Building2 className="w-3.5 h-3.5 text-[#167E83]" />
+                      <span>Institutional Donor Engagement</span>
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-50 text-amber-900 border border-amber-300">
+                      Funding Required: USD $30,000
+                    </span>
+                  </div>
+
+                  <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#12304A]">
+                    {project.corporatePhilanthropy.title}
+                  </h2>
+
+                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed max-w-3xl">
+                    {project.corporatePhilanthropy.description}
+                  </p>
+                </div>
+
+                {/* Prominent Legal Disclaimer & Non-Affiliation Transparency Notice */}
+                <div className="p-5 sm:p-6 rounded-2xl bg-amber-50/90 border-2 border-amber-300 text-amber-950 space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-900">
+                    <ShieldAlert className="w-4 h-4 text-amber-700 shrink-0" />
+                    <span>Prospective Research Reference & Transparency Notice</span>
+                  </div>
+                  <p className="text-xs sm:text-sm leading-relaxed text-amber-950">
+                    {project.corporatePhilanthropy.disclaimer}
+                  </p>
+                </div>
+
+                {/* Research Targets Grid (Company names and official funding links as research references only) */}
+                <div className="space-y-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+                    <h3 className="font-serif text-lg font-bold text-[#12304A]">
+                      Prospective U.S. Funding Programs (Research References)
+                    </h3>
+                    <span className="text-xs text-slate-500 font-medium">
+                      5 Institutional Research Targets • No Affiliation Implied
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {project.corporatePhilanthropy.targets.map((target, idx) => (
+                      <div
+                        key={idx}
+                        className="p-5 rounded-xl bg-[#F7F9FA] border border-slate-200/90 hover:border-[#167E83] transition-all flex flex-col justify-between group space-y-3"
+                      >
+                        <div className="space-y-2">
+                          <div className="flex items-start justify-between gap-2">
+                            <h4 className="font-serif text-base sm:text-lg font-bold text-[#12304A] group-hover:text-[#167E83] transition-colors">
+                              {target.name}
+                            </h4>
+                            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-200 text-slate-700 border border-slate-300 shrink-0">
+                              Research Target
+                            </span>
+                          </div>
+
+                          <div className="text-xs font-semibold text-[#167E83]">
+                            {target.focusArea}
+                          </div>
+
+                          <p className="text-xs text-slate-600 leading-relaxed">
+                            {target.alignment}
+                          </p>
+                        </div>
+
+                        <div className="pt-2 border-t border-slate-200/80">
+                          <a
+                            href={target.officialUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#167E83] hover:text-[#106064] hover:underline"
+                          >
+                            <span>Official Funding Program Information</span>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Dedicated Action Box Emphasizing Project Alignment, USD $30,000, Activities, and Discuss Funding Partnership CTA */}
+                <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-[#12304A] to-[#164366] text-white flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-md">
+                  <div className="space-y-2 max-w-xl">
+                    <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D8A85B]">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Project: {project.title}</span>
+                    </div>
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-white">
+                      Funding Required: USD $30,000
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                      Structured across 5 proposed educational activities (A–E) and verified outcomes to support 150–200 marginalized minority children with learning materials, school access support, and supplementary academic tutoring.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                    <Link
+                      to={`/partnership-inquiry?project=${encodeURIComponent(project.title)}&category=${encodeURIComponent(project.category)}`}
+                      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold text-[#12304A] bg-[#D8A85B] hover:bg-[#ECD29E] transition-all shadow-md font-medium"
+                    >
+                      <Handshake className="w-4 h-4" />
+                      <span>Discuss Funding Partnership</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                    <Link
+                      to={`/projects/${project.slug}/proposal`}
+                      className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-colors"
+                    >
+                      <FileText className="w-4 h-4 text-slate-200" />
+                      <span>View Full Proposal</span>
+                    </Link>
+                  </div>
+                </div>
+              </section>
+            )}
           </div>
 
           {/* Sidebar Specifications & Donor CTA (4 cols) */}
