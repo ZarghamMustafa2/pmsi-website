@@ -320,7 +320,22 @@ export const ProjectsPage: React.FC = () => {
                 <p className="text-sm text-slate-600 leading-relaxed">
                   PMSI is currently in its establishing phase, focusing on developing institutional partnerships for our proposed humanitarian initiatives. In strict accordance with our truthfulness and non-profit ethics standards, we only report active operations when formal grant agreements have been executed and field implementation is genuinely underway.
                 </p>
-                <div className="pt-3">
+
+                <div className="p-5 rounded-2xl bg-[#F7F9FA] border border-slate-200 text-left text-xs text-slate-700 space-y-2 max-w-lg mx-auto">
+                  <span className="font-bold text-[#12304A] block uppercase tracking-wider text-[11px]">
+                    Project Frameworks in Planning Phase:
+                  </span>
+                  <ul className="space-y-1.5 list-disc list-inside text-slate-600">
+                    <li><strong className="text-slate-900">Minority Rights Awareness Initiative</strong> (Status: Planning)</li>
+                    <li><strong className="text-slate-900">Transgender Skills Development Program</strong> (Status: Planning)</li>
+                    <li><strong className="text-slate-900">Flood Recovery Assistance Program</strong> (Status: Planning)</li>
+                  </ul>
+                  <p className="text-[11px] text-slate-500 italic pt-1 border-t border-slate-200/80">
+                    No unverified progress percentages, simulated milestones, or operational claims are published until genuine field operations commence.
+                  </p>
+                </div>
+
+                <div className="pt-2">
                   <button
                     type="button"
                     onClick={() => handleTabChange('upcoming')}
@@ -336,29 +351,60 @@ export const ProjectsPage: React.FC = () => {
                 {ongoingProjects.map((project) => (
                   <div
                     key={project.id}
-                    className="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col justify-between shadow-xs"
+                    className="bg-white rounded-2xl border border-slate-200/90 hover:border-[#167E83] shadow-xs hover:shadow-xl transition-all p-7 sm:p-8 flex flex-col justify-between group"
                   >
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#167E83]">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#167E83]/10 text-[#167E83]">
                           {project.category}
                         </span>
-                        <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-900 border border-blue-300">
-                          Ongoing
+                        <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-900 border border-blue-300">
+                          Status: {project.implementationStatus || 'Ongoing'}
                         </span>
                       </div>
-                      <h3 className="font-serif text-xl font-bold text-[#12304A]">
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#12304A] group-hover:text-[#167E83] transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                         {project.summary}
                       </p>
+                      <div className="space-y-2 pt-3 border-t border-slate-100 text-xs">
+                        <div className="flex items-start gap-2 text-slate-700">
+                          <MapPin className="w-4 h-4 text-[#167E83] shrink-0 mt-0.5" />
+                          <div>
+                            <span className="font-bold text-slate-900">Location: </span>
+                            <span className="text-slate-600">{project.location}</span>
+                          </div>
+                        </div>
+                        <div className="flex items-start gap-2 text-slate-700">
+                          <Users className="w-4 h-4 text-[#D8A85B] shrink-0 mt-0.5" />
+                          <div>
+                            <span className="font-bold text-slate-900">Intended Beneficiaries: </span>
+                            <span className="text-slate-600">{project.communityBeneficiary}</span>
+                          </div>
+                        </div>
+                        {project.startDate && (
+                          <div className="flex items-start gap-2 text-slate-700">
+                            <Clock className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                            <div>
+                              <span className="font-bold text-slate-900">Start Date: </span>
+                              <span className="text-slate-600">{project.startDate}</span>
+                            </div>
+                          </div>
+                        )}
+                        {project.verifiedProgress && (
+                          <div className="p-2.5 rounded-lg bg-blue-50/70 border border-blue-200/80 text-[11px] text-blue-950">
+                            <span className="font-bold block text-blue-900">Verified Progress:</span>
+                            <span>{project.verifiedProgress}</span>
+                          </div>
+                        )}
+                      </div>
                     </div>
                     <Link
                       to={`/projects/${project.slug}`}
-                      className="mt-6 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-[#167E83] bg-[#167E83]/10 hover:bg-[#167E83]/20 transition-colors"
+                      className="mt-6 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#12304A] hover:bg-[#167E83] transition-colors"
                     >
-                      <span>View Details</span>
+                      <span>View Project Details</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -389,7 +435,22 @@ export const ProjectsPage: React.FC = () => {
                 <p className="text-sm text-slate-600 leading-relaxed">
                   As an establishing humanitarian initiative currently finalizing statutory non-profit registration in Pakistan, PMSI has not yet concluded completed operational cycles. In adherence to international non-profit credibility covenants, we strictly do not invent historical projects, simulated outcomes, or fictional beneficiary totals.
                 </p>
-                <div className="pt-3">
+
+                <div className="p-5 rounded-2xl bg-[#F7F9FA] border border-slate-200 text-left text-xs text-slate-700 space-y-2 max-w-lg mx-auto">
+                  <span className="font-bold text-[#12304A] block uppercase tracking-wider text-[11px]">
+                    Standardized Frameworks Prepared for Future Verification:
+                  </span>
+                  <ul className="space-y-1.5 list-disc list-inside text-slate-600">
+                    <li><strong className="text-slate-900">Minority Children School Support</strong> (Pending Completion Records)</li>
+                    <li><strong className="text-slate-900">Winter Relief for Vulnerable Families</strong> (Pending Completion Records)</li>
+                    <li><strong className="text-slate-900">Community Education Awareness Program</strong> (Pending Completion Records)</li>
+                  </ul>
+                  <p className="text-[11px] text-slate-500 italic pt-1 border-t border-slate-200/80">
+                    Each future published record will require documented completion dates, activities delivered, audited beneficiary registries, actual results, and supporting audit evidence.
+                  </p>
+                </div>
+
+                <div className="pt-2">
                   <button
                     type="button"
                     onClick={() => handleTabChange('upcoming')}
@@ -405,27 +466,60 @@ export const ProjectsPage: React.FC = () => {
                 {completedProjects.map((project) => (
                   <div
                     key={project.id}
-                    className="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col justify-between shadow-xs"
+                    className="bg-white rounded-2xl border border-slate-200/90 hover:border-emerald-600 shadow-xs hover:shadow-xl transition-all p-7 sm:p-8 flex flex-col justify-between group"
                   >
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-slate-100 text-slate-700">
                           {project.category}
                         </span>
-                        <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-900 border border-emerald-300">
-                          Completed
+                        <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-900 border border-emerald-300">
+                          Status: Completed
                         </span>
                       </div>
-                      <h3 className="font-serif text-xl font-bold text-[#12304A]">
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#12304A] group-hover:text-emerald-700 transition-colors">
                         {project.title}
                       </h3>
                       <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                         {project.summary}
                       </p>
+                      <div className="space-y-2 pt-3 border-t border-slate-100 text-xs">
+                        <div className="flex items-start gap-2 text-slate-700">
+                          <MapPin className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                          <div>
+                            <span className="font-bold text-slate-900">Location: </span>
+                            <span className="text-slate-600">{project.location}</span>
+                          </div>
+                        </div>
+                        {project.completionDate && (
+                          <div className="flex items-start gap-2 text-slate-700">
+                            <CheckCircle className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                            <div>
+                              <span className="font-bold text-slate-900">Completion Date: </span>
+                              <span className="text-slate-600">{project.completionDate}</span>
+                            </div>
+                          </div>
+                        )}
+                        {project.verifiedBeneficiaries && (
+                          <div className="flex items-start gap-2 text-slate-700">
+                            <Users className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                            <div>
+                              <span className="font-bold text-slate-900">Verified Beneficiaries: </span>
+                              <span className="text-slate-600">{project.verifiedBeneficiaries}</span>
+                            </div>
+                          </div>
+                        )}
+                        {project.supportingEvidence && (
+                          <div className="p-2.5 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-[11px] text-emerald-950">
+                            <span className="font-bold block text-emerald-900">Supporting Evidence:</span>
+                            <span>{project.supportingEvidence}</span>
+                          </div>
+                        )}
+                      </div>
                     </div>
                     <Link
                       to={`/projects/${project.slug}`}
-                      className="mt-6 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 transition-colors"
+                      className="mt-6 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#12304A] hover:bg-emerald-800 transition-colors"
                     >
                       <span>View Project Details</span>
                       <ArrowRight className="w-3.5 h-3.5" />

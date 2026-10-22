@@ -101,14 +101,14 @@ export const ProjectDetailPage: React.FC = () => {
               {isOngoing && (
                 <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-500/20 border border-blue-400/40 text-blue-200">
                   <span className="w-2 h-2 rounded-full bg-blue-400" />
-                  <span>Status: Ongoing</span>
+                  <span>Status: {project.implementationStatus === 'Planning' ? 'Planning Phase' : 'Ongoing'}</span>
                 </span>
               )}
 
               {isCompleted && (
                 <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 border border-emerald-400/40 text-emerald-200">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span>Status: Completed</span>
+                  <span>Status: Completed & Verified</span>
                 </span>
               )}
 
@@ -226,13 +226,23 @@ export const ProjectDetailPage: React.FC = () => {
             <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
               <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#167E83]">
                 <Calendar className="w-4 h-4" />
-                <span>{isCompleted ? 'Delivered Interventions' : 'Proposed Educational Activities'}</span>
+                <span>
+                  {isCompleted
+                    ? 'Delivered Interventions'
+                    : isOngoing && project.implementationStatus === 'Planning'
+                    ? 'Current Planning Activities'
+                    : 'Proposed Educational Activities'}
+                </span>
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#12304A]">
-                {isCompleted ? 'Delivered Interventions' : 'Proposed Educational & Community Activities'}
+                {isCompleted
+                  ? 'Activities Delivered'
+                  : isOngoing && project.implementationStatus === 'Planning'
+                  ? 'Current Operational Activities (Planning Phase)'
+                  : 'Proposed Educational & Community Activities'}
               </h2>
               <div className="space-y-3 pt-1">
-                {project.activities.map((act, idx) => (
+                {(project.activitiesDelivered || project.currentActivities || project.activities).map((act, idx) => (
                   <div
                     key={idx}
                     className="p-4 rounded-xl bg-white border border-slate-200 flex items-start gap-3.5 hover:border-[#167E83] transition-colors"
@@ -252,13 +262,13 @@ export const ProjectDetailPage: React.FC = () => {
             <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
               <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#D8A85B]">
                 <Sparkles className="w-4 h-4" />
-                <span>{isCompleted ? 'Verified Outcomes' : 'Expected Outcomes & Social Impact'}</span>
+                <span>{isCompleted ? 'Verified Social Impact' : 'Expected Outcomes & Social Impact'}</span>
               </div>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#12304A]">
-                {isCompleted ? 'Verified Results' : 'Expected Humanitarian Outcomes'}
+                {isCompleted ? 'Actual Results' : 'Expected Humanitarian Outcomes'}
               </h2>
               <div className="space-y-3 pt-1">
-                {(project.expectedOutcomes || project.verifiedResults || []).map((outcome, idx) => (
+                {(project.actualResults || project.verifiedResults || project.expectedOutcomes || []).map((outcome, idx) => (
                   <div
                     key={idx}
                     className="p-4 rounded-xl bg-amber-50/50 border border-amber-200/80 flex items-start gap-3.5 text-amber-950"
@@ -418,16 +428,42 @@ export const ProjectDetailPage: React.FC = () => {
                 {isOngoing && (
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-blue-900 border border-blue-300">
                     <span className="w-2 h-2 rounded-full bg-blue-500" />
-                    <span>Ongoing Implementation</span>
+                    <span>{project.implementationStatus === 'Planning' ? 'Status: Planning' : 'Ongoing Implementation'}</span>
                   </div>
                 )}
                 {isCompleted && (
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-900 border border-emerald-300">
                     <span className="w-2 h-2 rounded-full bg-emerald-500" />
-                    <span>Completed & Documented</span>
+                    <span>Completed & Verified</span>
                   </div>
                 )}
               </div>
+
+              {/* Start Date (if ongoing/planning) */}
+              {project.startDate && (
+                <div className="space-y-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
+                    Inception / Start Date
+                  </span>
+                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+                    <Calendar className="w-4 h-4 text-blue-600 shrink-0" />
+                    <span>{project.startDate}</span>
+                  </div>
+                </div>
+              )}
+
+              {/* Completion Date (if completed) */}
+              {project.completionDate && (
+                <div className="space-y-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
+                    Completion Date
+                  </span>
+                  <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+                    <Calendar className="w-4 h-4 text-emerald-600 shrink-0" />
+                    <span>{project.completionDate}</span>
+                  </div>
+                </div>
+              )}
 
               {/* Location */}
               <div className="space-y-1">
@@ -450,6 +486,43 @@ export const ProjectDetailPage: React.FC = () => {
                   <span>{project.communityBeneficiary}</span>
                 </div>
               </div>
+
+              {/* Verified Beneficiaries (if completed) */}
+              {project.verifiedBeneficiaries && (
+                <div className="space-y-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
+                    Verified Beneficiaries
+                  </span>
+                  <div className="flex items-start gap-2 text-xs sm:text-sm text-slate-800 font-semibold leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <span>{project.verifiedBeneficiaries}</span>
+                  </div>
+                </div>
+              )}
+
+              {/* Supporting Evidence (if completed) */}
+              {project.supportingEvidence && (
+                <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200/80 text-emerald-950 space-y-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-900 block">
+                    Supporting Evidence
+                  </span>
+                  <p className="text-xs text-emerald-950 leading-relaxed font-medium">
+                    {project.supportingEvidence}
+                  </p>
+                </div>
+              )}
+
+              {/* Verified Progress (if ongoing) */}
+              {project.verifiedProgress && (
+                <div className="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200/90 text-blue-950 space-y-1">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-blue-900 block">
+                    Verified Progress
+                  </span>
+                  <p className="text-xs text-blue-950 leading-relaxed font-medium">
+                    {project.verifiedProgress}
+                  </p>
+                </div>
+              )}
 
               {/* Funding Requirement */}
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1">

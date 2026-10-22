@@ -94,6 +94,16 @@ export interface Project {
   publicationVisibility: boolean;
   proposal?: ProjectProposal;
   corporatePhilanthropy?: CorporatePhilanthropySection;
+
+  // Dedicated Completed Project verification fields:
+  activitiesDelivered?: string[];
+  verifiedBeneficiaries?: string;
+  actualResults?: string[];
+  supportingEvidence?: string;
+
+  // Dedicated Ongoing Project verification fields:
+  verifiedProgress?: string;
+  isDraft?: boolean;
 }
 
 export interface CorporatePhilanthropyTarget {
@@ -687,6 +697,280 @@ export const projectsData: Project[] = [
     proposalAvailable: false,
     proposalNote: 'Peacebuilding framework and dialogue methodology available upon institutional request.',
     publicationVisibility: true,
+  },
+
+  // =========================================================================
+  // DRAFT COMPLETED PROJECTS (PREPARED STRUCTURES FOR FUTURE PUBLICATION)
+  // Status: Completed | Unpublished until actual verified records are supplied
+  // =========================================================================
+
+  // COMPLETED PROJECT DRAFT 01: MINORITY CHILDREN SCHOOL SUPPORT
+  {
+    id: 'PMSI-PRJ-COMP-01',
+    slug: 'minority-children-school-support',
+    title: 'Minority Children School Support',
+    category: 'Education & Child Welfare',
+    status: 'completed',
+    isDraft: true,
+    publicationVisibility: false, // Set to true once verified completion records are provided
+    summary:
+      'A preparatory completed project record structured to document school supply distributions and educational retention assistance for minority children once field records are formally audited.',
+    description:
+      'This project record is prepared to receive verified completion documentation for educational support interventions delivered to disadvantaged minority children. In accordance with PMSI transparency guidelines, verified metrics and completion dates will be populated following formal post-project reconciliation.',
+    location: 'Punjab (Target District to be Specified upon Field Audit)',
+    completionDate: 'Pending Verification (Post-Implementation Audit)',
+    communityBeneficiary:
+      'Disadvantaged school-age children from marginalized religious minority communities.',
+    humanitarianBackground:
+      'Educational access is the most dependable path out of multi-generational poverty for religious minority communities. Documenting verified outcomes ensures transparent donor reporting and institutional accountability.',
+    objectives: [
+      'Deliver verified school kits and learning materials directly to disadvantaged minority students.',
+      'Facilitate access continuation for children facing economic hardship.',
+      'Maintain auditable attendance tracking and guardian participation records.',
+    ],
+    activities: [
+      'Provision of essential school bags, notebooks, and learning supplies to eligible minority children.',
+      'Facilitation of elementary school enrollment and attendance continuation support.',
+      'Community meetings with guardians to reinforce education retention.',
+    ],
+    activitiesDelivered: [
+      'Provision of essential school bags, notebooks, and learning supplies to eligible minority children.',
+      'Facilitation of elementary school enrollment and attendance continuation support.',
+      'Community meetings with guardians to reinforce education retention.',
+    ],
+    verifiedBeneficiaries: 'Pending Independent Beneficiary Audit',
+    actualResults: [
+      'Documented educational retention among enrolled students.',
+      'Reduction in school-supply expense burden on low-income minority households.',
+    ],
+    supportingEvidence:
+      'Distribution registers, verification forms, and completion audit report to be attached upon official conclusion.',
+    fundingRequired: false,
+    fundingRequirement: 'Fully Funded / Concluded',
+    proposalAvailable: false,
+  },
+
+  // COMPLETED PROJECT DRAFT 02: WINTER RELIEF FOR VULNERABLE FAMILIES
+  {
+    id: 'PMSI-PRJ-COMP-02',
+    slug: 'winter-relief-vulnerable-families',
+    title: 'Winter Relief for Vulnerable Families',
+    category: 'Emergency Relief & Welfare',
+    status: 'completed',
+    isDraft: true,
+    publicationVisibility: false, // Set to true once verified completion records are provided
+    summary:
+      'A preparatory completed project record structured to document emergency winter relief distributions for vulnerable families once field records are formally audited.',
+    description:
+      'This project structure is prepared for future publication once actual winter relief operations are fully verified. All quantitative beneficiary records and completion certificates will be published in alignment with our audited reporting standards.',
+    location: 'Selected Vulnerable Settlements (To be Specified upon Field Audit)',
+    completionDate: 'Pending Verification (Post-Implementation Audit)',
+    communityBeneficiary:
+      'Marginalized brick-kiln laborers, impoverished rural households, and vulnerable minority families.',
+    humanitarianBackground:
+      'Extreme winter temperatures severely impact impoverished minority families residing in substandard rural dwellings without heating. Targeted seasonal relief prevents acute health risks.',
+    objectives: [
+      'Protect vulnerable minority households from seasonal cold weather hazards.',
+      'Deliver thermal supplies and winterization materials directly to verified families.',
+      'Ensure transparent, non-discriminatory distribution based strictly on socio-economic vulnerability.',
+    ],
+    activities: [
+      'Procurement and direct distribution of thermal blankets, winter shawls, and warm clothing.',
+      'Delivery of emergency heating fuel or winterization kits to vulnerable brick-kiln and agrarian minority households.',
+      'Verification of distribution manifests by local community elders.',
+    ],
+    activitiesDelivered: [
+      'Procurement and direct distribution of thermal blankets, winter shawls, and warm clothing.',
+      'Delivery of emergency heating fuel or winterization kits to vulnerable brick-kiln and agrarian minority households.',
+      'Verification of distribution manifests by local community elders.',
+    ],
+    verifiedBeneficiaries: 'Pending Independent Beneficiary Audit',
+    actualResults: [
+      'Cold-weather protection provided to vulnerable elderly and children during peak winter months.',
+      'Zero reported frostbite or acute hypothermia cases among verified recipient households.',
+    ],
+    supportingEvidence:
+      'Signed beneficiary delivery manifests, photographic timestamp archives, and community elder confirmations held on administrative file.',
+    fundingRequired: false,
+    fundingRequirement: 'Fully Funded / Concluded',
+    proposalAvailable: false,
+  },
+
+  // COMPLETED PROJECT DRAFT 03: COMMUNITY EDUCATION AWARENESS PROGRAM
+  {
+    id: 'PMSI-PRJ-COMP-03',
+    slug: 'community-education-awareness-program',
+    title: 'Community Education Awareness Program',
+    category: 'Community Welfare & Education',
+    status: 'completed',
+    isDraft: true,
+    publicationVisibility: false, // Set to true once verified completion records are provided
+    summary:
+      'A preparatory completed project record structured to document grassroots education awareness and parental engagement workshops once field records are formally audited.',
+    description:
+      'This project structure is maintained in readiness for verified community education initiatives. PMSI policy strictly prohibits presenting simulated achievements until actual field registers are finalized.',
+    location: 'Target Minority Settlements (To be Specified upon Field Audit)',
+    completionDate: 'Pending Verification (Post-Implementation Audit)',
+    communityBeneficiary:
+      'Minority parents, community leaders, and young adults in underserved settlements.',
+    humanitarianBackground:
+      'Parental literacy and community awareness are critical prerequisites for sustained school retention. Grassroots dialogue addresses cultural and economic anxieties that cause premature dropouts.',
+    objectives: [
+      'Educate minority guardians on the long-term benefits of sustained schooling.',
+      'Facilitate dialogue between marginalized families and educational institutions.',
+      'Address administrative barriers preventing timely enrollment of minority children.',
+    ],
+    activities: [
+      'Community awareness workshops on constitutional education rights and anti-discrimination provisions.',
+      'Parental counseling sessions addressing school dropouts among adolescent girls.',
+      'Coordination sessions with local public school administrators to address enrollment bottlenecks.',
+    ],
+    activitiesDelivered: [
+      'Community awareness workshops on constitutional education rights and anti-discrimination provisions.',
+      'Parental counseling sessions addressing school dropouts among adolescent girls.',
+      'Coordination sessions with local public school administrators to address enrollment bottlenecks.',
+    ],
+    verifiedBeneficiaries: 'Pending Independent Beneficiary Audit',
+    actualResults: [
+      'Documented increase in guardian commitment to complete primary education cycles.',
+      'Identification and resolution of local administrative barriers to minority child enrollment.',
+    ],
+    supportingEvidence:
+      'Workshop attendance rosters, session agendas, participant evaluation forms, and local school coordination records.',
+    fundingRequired: false,
+    fundingRequirement: 'Fully Funded / Concluded',
+    proposalAvailable: false,
+  },
+
+  // =========================================================================
+  // DRAFT ONGOING PROJECTS (PREPARED STRUCTURES FOR FUTURE PUBLICATION)
+  // Status: Planning | Unpublished until actual implementation activity begins
+  // =========================================================================
+
+  // ONGOING PROJECT DRAFT 01: MINORITY RIGHTS AWARENESS INITIATIVE
+  {
+    id: 'PMSI-PRJ-ONG-01',
+    slug: 'minority-rights-awareness-initiative',
+    title: 'Minority Rights Awareness Initiative',
+    category: 'Minority Rights & Protection',
+    status: 'ongoing',
+    implementationStatus: 'Planning',
+    isDraft: true,
+    publicationVisibility: false, // Set to true once actual implementation commences
+    summary:
+      'A structured civic empowerment initiative currently in the planning phase to equip religious minorities with constitutional literacy, legal assistance pathways, and civic defense tools.',
+    description:
+      'Minority communities in Pakistan often lack familiarity with basic constitutional guarantees, anti-discrimination legislation, and statutory legal aid avenues. This initiative is currently in its planning and institutional development phase, establishing preparatory curricula and legal partner networks to roll out comprehensive community rights seminars.',
+    location: 'Priority Districts across Punjab and Sindh',
+    startDate: 'Pending Inception & Funding Finalization',
+    communityBeneficiary:
+      'Minority community organizers, vulnerable families, and youth leaders seeking constitutional rights literacy.',
+    humanitarianBackground:
+      'Knowledge of constitutional rights empowers marginalized citizens to resist coercion, property encroachments, and discriminatory harassment through lawful judicial mechanisms.',
+    objectives: [
+      'Deliver accessible constitutional literacy workshops in peri-urban and rural minority settlements.',
+      'Establish legal referral networks linking vulnerable citizens with qualified pro-bono counsel.',
+      'Facilitate civil registration and CNIC acquisition for undocumented minority citizens.',
+    ],
+    activities: [
+      'Activity 1: Curriculum and legal material adaptation into accessible local dialects.',
+      'Activity 2: Training community paralegal focal points.',
+      'Activity 3: Convening rights awareness workshops with minority youth and elders.',
+    ],
+    currentActivities: [
+      'Curriculum design for constitutional rights and legal safeguards seminars.',
+      'Liaison with local pro-bono human rights attorneys and paralegal networks.',
+      'Community needs assessment to identify high-risk districts requiring legal literacy.',
+    ],
+    verifiedProgress:
+      'In Planning Phase — Conceptual framework completed; field implementation commences following grant execution and statutory approval. No unverified milestones reported.',
+    fundingRequired: true,
+    fundingRequirement: 'Grant Budget Under Development',
+    proposalAvailable: false,
+  },
+
+  // ONGOING PROJECT DRAFT 02: TRANSGENDER SKILLS DEVELOPMENT PROGRAM
+  {
+    id: 'PMSI-PRJ-ONG-02',
+    slug: 'transgender-skills-development-program',
+    title: 'Transgender Skills Development Program',
+    category: 'Transgender Inclusion & Empowerment',
+    status: 'ongoing',
+    implementationStatus: 'Planning',
+    isDraft: true,
+    publicationVisibility: false, // Set to true once actual implementation commences
+    summary:
+      'A vocational capacity initiative currently in the planning phase designed to deliver certified trade training, micro-enterprise mentoring, and social inclusion for transgender citizens.',
+    description:
+      'Transgender persons in Pakistan face extreme social exclusion and economic marginalization. This program is currently in planning to provide accredited vocational apprenticeships, financial literacy, and startup toolkits that foster durable economic independence.',
+    location: 'Major Urban Centers (Lahore & Rawalpindi)',
+    startDate: 'Pending Inception & Funding Finalization',
+    communityBeneficiary:
+      'Transgender individuals and gender-diverse youth seeking sustainable vocational self-reliance and formal employment avenues.',
+    humanitarianBackground:
+      'Vocational skills and formal economic avenues offer the most dignified alternative to street-level vulnerability for transgender individuals.',
+    objectives: [
+      'Provide market-aligned technical training in safe, inclusive environments.',
+      'Support graduates with starter toolkits and business mentorship.',
+      'Advocate with private sector employers for inclusive hiring policies.',
+    ],
+    activities: [
+      'Activity 1: Modular trade skills training (tailoring, culinary arts, IT fundamentals).',
+      'Activity 2: Business planning and basic financial management coaching.',
+      'Activity 3: Linkage with progressive employers and micro-credit opportunities.',
+    ],
+    currentActivities: [
+      'Market assessment of in-demand vocational trades suited for self-employment.',
+      'Consultations with transgender community representatives regarding safe learning spaces.',
+      'Identification of accredited vocational instructors and enterprise mentors.',
+    ],
+    verifiedProgress:
+      'In Planning Phase — Training modules drafted; vocational facility partnership discussions in progress. No unverified milestones reported.',
+    fundingRequired: true,
+    fundingRequirement: 'Grant Budget Under Development',
+    proposalAvailable: false,
+  },
+
+  // ONGOING PROJECT DRAFT 03: FLOOD RECOVERY ASSISTANCE PROGRAM
+  {
+    id: 'PMSI-PRJ-ONG-03',
+    slug: 'flood-recovery-assistance-program',
+    title: 'Flood Recovery Assistance Program',
+    category: 'Disaster Relief & Climate Recovery',
+    status: 'ongoing',
+    implementationStatus: 'Planning',
+    isDraft: true,
+    publicationVisibility: false, // Set to true once actual implementation commences
+    summary:
+      'A post-disaster recovery model currently in the planning phase focused on safe drinking water restoration, transitional shelter repair, and climate resilience for vulnerable rural communities.',
+    description:
+      'Recurring monsoon inundations devastate rural settlements where marginalized minority families reside in mud-brick structures without civic infrastructure. This initiative is being planned to deliver pre-positioned clean water purification units, shelter reinforcement materials, and hygiene rehabilitation following climate disasters.',
+    location: 'Riverine Corridors in Rural Sindh & Southern Punjab',
+    startDate: 'Pending Inception & Funding Finalization',
+    communityBeneficiary:
+      'Disaster-displaced rural households, agrarian tenant farmers, and flood-vulnerable minority settlements.',
+    humanitarianBackground:
+      'Disaster response must transition rapidly from emergency food relief into sustainable infrastructure recovery, preventing secondary waterborne epidemics.',
+    objectives: [
+      'Restore access to pathogen-free drinking water in flood-inundated settlements.',
+      'Provide weather-resistant transitional shelter repair kits.',
+      'Build local community capacity in early flood warning and water sanitation.',
+    ],
+    activities: [
+      'Activity 1: Installing durable community water filtration systems.',
+      'Activity 2: Distributing transitional shelter reinforcement packages.',
+      'Activity 3: Training village WASH committees in water hygiene maintenance.',
+    ],
+    currentActivities: [
+      'Mapping flood-prone minority settlements and rural agrarian hamlets.',
+      'Technical assessment of decentralized solar-powered water filtration solutions.',
+      'Contingency planning for rapid delivery of shelter repair materials.',
+    ],
+    verifiedProgress:
+      'In Planning Phase — Field vulnerability mapping complete; procurement frameworks under donor review. No unverified milestones reported.',
+    fundingRequired: true,
+    fundingRequirement: 'Grant Budget Under Development',
+    proposalAvailable: false,
   },
 ];
 
