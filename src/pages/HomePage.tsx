@@ -2,6 +2,7 @@ import React from 'react';
 import { Hero } from '../components/Hero';
 import { WhoWeAre } from '../components/WhoWeAre';
 import { FocusAreas } from '../components/FocusAreas';
+import { HomeProjectsSection } from '../components/HomeProjectsSection';
 import { MissionVision } from '../components/MissionVision';
 import { Commitments } from '../components/Commitments';
 import { Partnership } from '../components/Partnership';
@@ -23,6 +24,9 @@ export const HomePage: React.FC = () => {
 
       {/* Section D — Our Focus Areas */}
       <FocusAreas />
+
+      {/* Section D2 — Our Humanitarian Projects */}
+      <HomeProjectsSection />
 
       {/* Section E — Our Mission & Vision */}
       <MissionVision />

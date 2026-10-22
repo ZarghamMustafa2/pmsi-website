@@ -13,6 +13,7 @@ import {
   Lock,
   Globe,
   Info,
+  Sparkles,
 } from 'lucide-react';
 
 const PARTNERSHIP_CATEGORIES = [
@@ -28,9 +29,10 @@ const PARTNERSHIP_CATEGORIES = [
 
 export const PartnershipInquiryPage: React.FC = () => {
   const [searchParams] = useSearchParams();
+  const projectParam = searchParams.get('project') || '';
   const categoryParam = searchParams.get('category') || '';
 
-  // Map category param to standard list if closely matched
+  // Map category param or project title to standard list if closely matched
   const initialInterest =
     PARTNERSHIP_CATEGORIES.find(
       (cat) => cat.toLowerCase() === categoryParam.toLowerCase()
@@ -38,7 +40,7 @@ export const PartnershipInquiryPage: React.FC = () => {
     PARTNERSHIP_CATEGORIES.find((cat) =>
       categoryParam ? cat.toLowerCase().includes(categoryParam.toLowerCase().slice(0, 8)) : false
     ) ||
-    'Institutional Funding Discussion';
+    (projectParam ? 'Humanitarian Project Collaboration' : 'Institutional Funding Discussion');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -48,7 +50,7 @@ export const PartnershipInquiryPage: React.FC = () => {
     website: '',
     partnershipInterest: initialInterest,
     fundingRange: 'Exploratory / Under Discussion',
-    message: '',
+    message: projectParam ? `Inquiry regarding proposed project: ${projectParam}\n\n` : '',
     privacyConsent: false,
     _gotcha: '', // Honeypot
   });
@@ -348,6 +350,16 @@ ${formData.message}`;
                 <h3 className="font-serif text-xl font-semibold text-[#12304A] border-b border-slate-100 pb-3">
                   Expression of Partnership Interest
                 </h3>
+
+                {projectParam && (
+                  <div className="p-3.5 rounded-xl bg-amber-50 border border-amber-300 text-amber-950 flex items-start gap-2.5 text-xs">
+                    <Sparkles className="w-4 h-4 text-[#D8A85B] shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-bold">Inquiring Regarding Proposed Project: </span>
+                      <span className="font-semibold text-amber-900">{projectParam}</span>
+                    </div>
+                  </div>
+                )}
 
                 {/* 1. Full Name & 2. Organization Name */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
