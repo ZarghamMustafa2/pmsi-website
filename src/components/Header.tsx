@@ -43,6 +43,13 @@ export const Header: React.FC = () => {
     }
   }, [isMobileMenuOpen]);
 
+  // Close mobile menu on route change (official React state adjustment during render)
+  const [prevPath, setPrevPath] = useState(location.pathname);
+  if (prevPath !== location.pathname) {
+    setPrevPath(location.pathname);
+    setIsMobileMenuOpen(false);
+  }
+
   const navLinks = [
     { name: 'Home', to: '/' },
     { name: 'About Us', to: '/about' },
@@ -119,54 +126,63 @@ export const Header: React.FC = () => {
 
       {/* Mobile Menu Dropdown & Drawer */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-[#12304A]/98 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300">
-          <div className="px-5 pt-4 pb-6 space-y-1.5 max-h-[calc(100vh-5rem)] overflow-y-auto">
-            <div className="py-2.5 mb-2 border-b border-white/10">
-              <span className="text-xs uppercase tracking-widest text-[#D8A85B] font-semibold flex items-center gap-1.5">
-                <ShieldCheck className="w-4 h-4 text-[#D8A85B]" />
-                Pakistan Minorities Support Initiative
-              </span>
-            </div>
+        <>
+          {/* Backdrop overlay for tap-to-dismiss */}
+          <div
+            className="lg:hidden fixed inset-0 top-full bg-black/60 backdrop-blur-xs z-40 transition-opacity"
+            onClick={() => setIsMobileMenuOpen(false)}
+            aria-hidden="true"
+          />
 
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.to}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors ${
-                  isActive(link.to)
-                    ? 'text-[#D8A85B] bg-white/10 border-l-4 border-[#D8A85B] pl-3'
-                    : 'text-slate-100 hover:bg-white/10 hover:text-white'
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+          <div className="lg:hidden fixed inset-x-0 top-full bg-[#12304A]/98 backdrop-blur-xl border-b border-white/10 shadow-2xl transition-all duration-300 z-50">
+            <div className="px-5 pt-4 pb-6 space-y-1.5 max-h-[calc(100vh-5rem)] overflow-y-auto">
+              <div className="py-2.5 mb-2 border-b border-white/10">
+                <span className="text-xs uppercase tracking-widest text-[#D8A85B] font-semibold flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-[#D8A85B]" />
+                  Pakistan Minorities Support Initiative
+                </span>
+              </div>
 
-            <div className="pt-4 mt-3 border-t border-white/10 space-y-2.5">
-              <Link
-                to="/donate"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-base font-bold text-[#12304A] bg-[#D8A85B] hover:bg-[#ECD29E] shadow-md focus:outline-none focus:ring-2 focus:ring-[#D8A85B]"
-              >
-                <Heart className="w-4 h-4 text-[#12304A] fill-[#12304A]" />
-                <span>Donate Now</span>
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors ${
+                    isActive(link.to)
+                      ? 'text-[#D8A85B] bg-white/10 border-l-4 border-[#D8A85B] pl-3'
+                      : 'text-slate-100 hover:bg-white/10 hover:text-white'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
 
-              <a
-                href={PMSI_CONTACT.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                aria-label={`Chat with PMSI on WhatsApp at ${PMSI_CONTACT.whatsappNumber}`}
-                className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-[#25D366]/20 hover:bg-[#25D366] border border-[#25D366]/40 transition-colors shadow-xs"
-              >
-                <WhatsAppIcon className="w-4 h-4 text-[#25D366] group-hover:text-white" />
-                <span>Chat on WhatsApp ({PMSI_CONTACT.whatsappNumber})</span>
-              </a>
+              <div className="pt-4 mt-3 border-t border-white/10 space-y-2.5">
+                <Link
+                  to="/donate"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-base font-bold text-[#12304A] bg-[#D8A85B] hover:bg-[#ECD29E] shadow-md focus:outline-none focus:ring-2 focus:ring-[#D8A85B]"
+                >
+                  <Heart className="w-4 h-4 text-[#12304A] fill-[#12304A]" />
+                  <span>Donate Now</span>
+                </Link>
+
+                <a
+                  href={PMSI_CONTACT.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  aria-label={`Chat with PMSI on WhatsApp at ${PMSI_CONTACT.whatsappNumber}`}
+                  className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-[#25D366]/20 hover:bg-[#25D366] border border-[#25D366]/40 transition-colors shadow-xs"
+                >
+                  <WhatsAppIcon className="w-4 h-4 text-[#25D366] group-hover:text-white" />
+                  <span>Chat on WhatsApp ({PMSI_CONTACT.whatsappNumber})</span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

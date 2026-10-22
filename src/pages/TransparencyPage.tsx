@@ -102,9 +102,9 @@ export const TransparencyPage: React.FC = () => {
       </section>
 
       {/* Main Content Sections */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 space-y-10 sm:space-y-16">
         {/* Section E — Truthful Organizational Legal Disclosure (Featured First for Maximum Credibility) */}
-        <section className="p-8 sm:p-10 rounded-3xl bg-amber-50/80 border border-amber-300 text-amber-950 shadow-sm relative overflow-hidden">
+        <section className="p-5 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl bg-amber-50/80 border border-amber-300 text-amber-950 shadow-sm relative overflow-hidden">
           <div className="flex flex-col md:flex-row items-start gap-6">
             <div className="w-14 h-14 rounded-2xl bg-amber-200/80 border border-amber-400/60 flex items-center justify-center text-amber-900 shrink-0">
               <AlertTriangle className="w-7 h-7" />
@@ -150,7 +150,7 @@ export const TransparencyPage: React.FC = () => {
         </section>
 
         {/* Section A — Organizational Governance */}
-        <section className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-sm">
+        <section className="bg-white p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm">
           <div className="max-w-3xl mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
@@ -231,7 +231,7 @@ export const TransparencyPage: React.FC = () => {
         </section>
 
         {/* Section B — Financial Accountability */}
-        <section className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-sm">
+        <section className="bg-white p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm">
           <div className="max-w-3xl mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
@@ -297,8 +297,8 @@ export const TransparencyPage: React.FC = () => {
         </section>
 
         {/* Section C — Ethical Humanitarian Principles */}
-        <section className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-sm">
-          <div className="max-w-3xl mb-12">
+        <section className="bg-white p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm">
+          <div className="max-w-3xl mb-8 sm:mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
               <span className="text-xs font-bold uppercase tracking-widest text-[#167E83]">
@@ -321,7 +321,7 @@ export const TransparencyPage: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 hover:border-[#167E83] transition-colors"
+                  className="p-5 sm:p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 hover:border-[#167E83] transition-colors"
                 >
                   <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-4 shadow-sm">
                     <Icon className="w-5 h-5" />
@@ -339,7 +339,7 @@ export const TransparencyPage: React.FC = () => {
         </section>
 
         {/* Section D — Child & Community Protection */}
-        <section className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-sm">
+        <section className="bg-white p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm">
           <div className="max-w-3xl mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
@@ -358,7 +358,7 @@ export const TransparencyPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/40 space-y-3">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/40 space-y-3">
               <h3 className="font-serif text-lg font-semibold text-white flex items-center gap-2">
                 <Heart className="w-5 h-5 text-[#D8A85B]" />
                 Child Safeguarding Protocols
@@ -370,7 +370,7 @@ export const TransparencyPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/40 space-y-3">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/40 space-y-3">
               <h3 className="font-serif text-lg font-semibold text-white flex items-center gap-2">
                 <Users className="w-5 h-5 text-[#1DA0A6]" />
                 Vulnerable Minority & Beneficiary Protection
@@ -385,7 +385,7 @@ export const TransparencyPage: React.FC = () => {
         </section>
 
         {/* Section F — Non-Discrimination Policy */}
-        <section className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-sm">
+        <section className="bg-white p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm">
           <div className="max-w-3xl mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
@@ -404,7 +404,7 @@ export const TransparencyPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-slate-700 leading-relaxed">
-            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 space-y-2">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 space-y-2">
               <h4 className="font-bold text-[#12304A]">Needs-Based Aid Delivery</h4>
               <p>
                 All humanitarian assistance, educational sponsorships, and emergency flood relief packages are distributed
@@ -413,7 +413,7 @@ export const TransparencyPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 space-y-2">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 space-y-2">
               <h4 className="font-bold text-[#12304A]">Respect for Religious Identity</h4>
               <p>
                 We do not condition aid upon religious conformity or participation in any faith activities. We defend the
@@ -424,7 +424,7 @@ export const TransparencyPage: React.FC = () => {
         </section>
 
         {/* Section G — Partnership Inquiry & Institutional Procedures */}
-        <section className="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-sm">
+        <section className="bg-white p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-sm">
           <div className="max-w-3xl mb-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
@@ -443,7 +443,7 @@ export const TransparencyPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
               <div>
                 <span className="font-mono text-xs font-bold text-[#167E83] uppercase tracking-wider block mb-2">Stage 01</span>
                 <h4 className="font-serif text-base font-bold text-[#12304A] mb-2">Initial Inquiry</h4>
@@ -453,7 +453,7 @@ export const TransparencyPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
               <div>
                 <span className="font-mono text-xs font-bold text-[#167E83] uppercase tracking-wider block mb-2">Stage 02</span>
                 <h4 className="font-serif text-base font-bold text-[#12304A] mb-2">Concept Dialogue</h4>
@@ -463,7 +463,7 @@ export const TransparencyPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
               <div>
                 <span className="font-mono text-xs font-bold text-[#167E83] uppercase tracking-wider block mb-2">Stage 03</span>
                 <h4 className="font-serif text-base font-bold text-[#12304A] mb-2">Due Diligence Review</h4>
@@ -473,7 +473,7 @@ export const TransparencyPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
+            <div className="p-5 sm:p-6 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 flex flex-col justify-between">
               <div>
                 <span className="font-mono text-xs font-bold text-[#167E83] uppercase tracking-wider block mb-2">Stage 04</span>
                 <h4 className="font-serif text-base font-bold text-[#12304A] mb-2">Formal Execution</h4>
@@ -486,7 +486,7 @@ export const TransparencyPage: React.FC = () => {
         </section>
 
         {/* Call to Action Banner */}
-        <div className="p-8 sm:p-12 rounded-3xl bg-[#12304A] text-white border border-[#167E83]/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="p-6 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl bg-[#12304A] text-white border border-[#167E83]/40 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <h3 className="font-serif text-2xl font-semibold text-white mb-2">
               Interested in Institutional Dialogue?
@@ -497,16 +497,16 @@ export const TransparencyPage: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3.5 shrink-0">
+          <div className="flex flex-col sm:flex-row gap-3.5 w-full md:w-auto shrink-0">
             <Link
               to="/partnership-inquiry"
-              className="px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#125e62] hover:from-[#1DA0A6] hover:to-[#167E83] border border-[#167E83] text-center"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#125e62] hover:from-[#1DA0A6] hover:to-[#167E83] border border-[#167E83] text-center"
             >
               Submit Partnership Inquiry
             </Link>
             <Link
               to="/funding-opportunities"
-              className="px-6 py-3 rounded-xl text-sm font-semibold text-[#12304A] bg-[#F7F9FA] hover:bg-white text-center flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-semibold text-[#12304A] bg-[#F7F9FA] hover:bg-white text-center flex items-center justify-center gap-2"
             >
               <span>View Proposed Funding Areas</span>
               <ArrowRight className="w-4 h-4 text-[#167E83]" />

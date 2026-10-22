@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
 
   return (
     <footer className="bg-[#0e2438] text-white border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
           {/* Brand & Organization Summary (5 cols) */}
           <div className="lg:col-span-5 space-y-5">
@@ -201,12 +201,12 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar: Copyright, Legal Links & Back-to-top */}
-        <div className="pt-10 mt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300">
+        <div className="pt-10 mt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-300 text-center sm:text-left">
           <p>
             © {CURRENT_YEAR} Pakistan Minorities Support Initiative (PMSI). All rights reserved.
           </p>
 
-          <div className="flex flex-wrap items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-6">
             <a
               href={PMSI_CONTACT.whatsappLink}
               target="_blank"

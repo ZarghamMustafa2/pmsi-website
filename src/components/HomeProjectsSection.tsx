@@ -54,11 +54,11 @@ export const HomeProjectsSection: React.FC = () => {
           {upcomingProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white rounded-2xl border border-slate-200/90 hover:border-[#D8A85B] shadow-xs hover:shadow-xl transition-all duration-300 p-7 sm:p-8 flex flex-col justify-between group relative overflow-hidden"
+              className="bg-white rounded-2xl border border-slate-200/90 hover:border-[#D8A85B] shadow-xs hover:shadow-xl transition-all duration-300 p-5 sm:p-7 md:p-8 flex flex-col justify-between group relative overflow-hidden"
             >
               <div className="space-y-4">
                 {/* Top Row: Category & Status */}
-                <div className="flex items-start justify-between gap-2">
+                <div className="flex flex-wrap sm:flex-nowrap items-start justify-between gap-2">
                   <div className="flex flex-wrap items-center gap-1.5">
                     <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#167E83]/10 text-[#167E83]">
                       {project.category}

@@ -25,12 +25,12 @@ export const Logo: React.FC<LogoProps> = ({
         <img
           src={logoSrc}
           alt="Pakistan Minorities Support Initiative (PMSI) Logo"
-          className="h-11 w-11 sm:h-12 sm:w-12 object-contain rounded-md transition-transform group-hover:scale-105 duration-300 shrink-0"
+          className="h-10 w-10 sm:h-12 sm:w-12 object-contain rounded-md transition-transform group-hover:scale-105 duration-300 shrink-0"
           onError={() => setImageError(true)}
         />
       ) : (
         /* Institutional Emblem Fallback when image asset is pending upload */
-        <div className="relative flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-[#12304A] to-[#167E83] border border-[#D8A85B]/40 shadow-sm transition-transform group-hover:scale-105 duration-300 shrink-0">
+        <div className="relative flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br from-[#12304A] to-[#167E83] border border-[#D8A85B]/40 shadow-sm transition-transform group-hover:scale-105 duration-300 shrink-0">
           <span className="font-display font-bold text-sm tracking-widest text-[#D8A85B]">
             PMSI
           </span>
@@ -41,7 +41,7 @@ export const Logo: React.FC<LogoProps> = ({
       <div className="flex flex-col">
         <div className="flex items-center gap-1.5">
           <span
-            className={`font-display font-extrabold text-lg sm:text-xl tracking-wider transition-colors duration-200 ${
+            className={`font-display font-extrabold text-base sm:text-xl tracking-wider transition-colors duration-200 ${
               isLight ? 'text-white group-hover:text-[#D8A85B]' : 'text-[#12304A] group-hover:text-[#167E83]'
             }`}
           >
@@ -53,7 +53,7 @@ export const Logo: React.FC<LogoProps> = ({
         </div>
         {showSubtitle && (
           <span
-            className={`text-[11px] sm:text-xs font-medium tracking-normal leading-tight transition-colors duration-200 truncate max-w-[175px] xs:max-w-[210px] sm:max-w-none ${
+            className={`text-[10px] sm:text-xs font-medium tracking-normal leading-tight transition-colors duration-200 truncate max-w-[145px] min-[390px]:max-w-[190px] sm:max-w-none lg:hidden xl:block ${
               isLight ? 'text-slate-200 group-hover:text-white' : 'text-slate-700'
             }`}
           >

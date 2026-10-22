@@ -48,8 +48,8 @@ export const PrivacyPolicyPage: React.FC = () => {
       </section>
 
       {/* Main Privacy Policy Narrative */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-sm space-y-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20">
+        <div className="p-5 sm:p-8 lg:p-12 rounded-2xl sm:rounded-3xl bg-white border border-slate-200/90 shadow-sm space-y-10 sm:space-y-12">
           {/* Section 1: Overview */}
           <section className="space-y-4">
             <h2 className="font-serif text-2xl font-semibold text-[#12304A] flex items-center gap-2.5 border-b border-slate-100 pb-3">

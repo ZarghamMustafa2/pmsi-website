@@ -173,9 +173,9 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section A: About PMSI Narrative */}
-      <section className="py-20 bg-white border-b border-slate-200/80">
+      <section className="py-12 sm:py-20 bg-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-6 text-slate-700 leading-relaxed text-base sm:text-lg">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
@@ -211,7 +211,7 @@ export const AboutPage: React.FC = () => {
             </div>
 
             <div className="lg:col-span-5 space-y-6">
-              <div className="p-8 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/30 shadow-xl relative overflow-hidden">
+              <div className="p-6 sm:p-8 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/30 shadow-xl relative overflow-hidden">
                 <div
                   className="absolute -top-16 -right-16 w-40 h-40 bg-[#167E83]/20 rounded-full blur-2xl pointer-events-none"
                   aria-hidden="true"
@@ -247,11 +247,11 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section B & C: Mission & Vision */}
-      <section className="py-20 bg-[#F7F9FA] border-b border-slate-200">
+      <section className="py-12 sm:py-20 bg-[#F7F9FA] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             {/* Section B: Mission */}
-            <div className="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
+            <div className="p-5 sm:p-8 lg:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-[#167E83]/10 border border-[#167E83]/20 flex items-center justify-center text-[#167E83]">
@@ -267,7 +267,7 @@ export const AboutPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-xl bg-[#F7F9FA] border border-slate-200/80 mb-6">
+                <div className="p-5 sm:p-6 rounded-xl bg-[#F7F9FA] border border-slate-200/80 mb-6">
                   <p className="font-serif text-lg sm:text-xl text-slate-800 font-light italic leading-relaxed">
                     "Promote minority rights, inclusive education, equal opportunities, community
                     protection and humanitarian assistance for vulnerable populations."
@@ -288,7 +288,7 @@ export const AboutPage: React.FC = () => {
             </div>
 
             {/* Section C: Vision */}
-            <div className="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
+            <div className="p-5 sm:p-8 lg:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-xl bg-[#D8A85B]/20 border border-[#D8A85B]/30 flex items-center justify-center text-[#B8893F]">
@@ -304,7 +304,7 @@ export const AboutPage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-xl bg-[#F7F9FA] border border-slate-200/80 mb-6">
+                <div className="p-5 sm:p-6 rounded-xl bg-[#F7F9FA] border border-slate-200/80 mb-6">
                   <p className="font-serif text-lg sm:text-xl text-slate-800 font-light italic leading-relaxed">
                     "A Pakistan where every individual, regardless of faith, gender identity or
                     socioeconomic background, can live with dignity, safety and equal opportunity."
@@ -328,7 +328,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section D: Our Core Values (Six-item layout) */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-12 sm:py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
@@ -355,7 +355,7 @@ export const AboutPage: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="p-8 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 hover:border-[#167E83] transition-all duration-300 hover:shadow-lg flex flex-col justify-between"
+                  className="p-6 sm:p-8 rounded-2xl bg-[#F7F9FA] border border-slate-200/80 hover:border-[#167E83] transition-all duration-300 hover:shadow-lg flex flex-col justify-between"
                 >
                   <div>
                     <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-6 shadow-sm">
@@ -383,7 +383,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section E: Humanitarian Objectives */}
-      <section className="py-20 bg-[#F7F9FA] border-b border-slate-200">
+      <section className="py-12 sm:py-20 bg-[#F7F9FA] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
@@ -434,7 +434,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section E: Our Humanitarian Approach */}
-      <section className="py-20 bg-[#F7F9FA] border-b border-slate-200">
+      <section className="py-12 sm:py-20 bg-[#F7F9FA] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
@@ -462,7 +462,7 @@ export const AboutPage: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:border-[#167E83]/60 transition-all duration-200"
+                  className="p-5 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm hover:border-[#167E83]/60 transition-all duration-200"
                 >
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
                     <div className="w-12 h-12 rounded-xl bg-[#167E83]/10 border border-[#167E83]/20 flex items-center justify-center text-[#167E83] shrink-0">
@@ -488,7 +488,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section F: Intended Geographical Focus in Pakistan */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-12 sm:py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
@@ -511,7 +511,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
+            <div className="p-5 sm:p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
               <div>
                 <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-4 shadow-xs">
                   <MapPin className="w-5 h-5" />
@@ -529,7 +529,7 @@ export const AboutPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
+            <div className="p-5 sm:p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
               <div>
                 <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-4 shadow-xs">
                   <MapPin className="w-5 h-5" />
@@ -547,7 +547,7 @@ export const AboutPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
+            <div className="p-5 sm:p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
               <div>
                 <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-4 shadow-xs">
                   <MapPin className="w-5 h-5" />
@@ -565,7 +565,7 @@ export const AboutPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
+            <div className="p-5 sm:p-7 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all flex flex-col justify-between">
               <div>
                 <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-4 shadow-xs">
                   <MapPin className="w-5 h-5" />
@@ -587,7 +587,7 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Section G: Initiative Leadership & Institutional Accountability */}
-      <section className="py-20 bg-[#F7F9FA] border-b border-slate-200">
+      <section className="py-12 sm:py-20 bg-[#F7F9FA] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
@@ -612,7 +612,7 @@ export const AboutPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             {/* Leadership Profile */}
-            <div className="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
+            <div className="p-5 sm:p-8 lg:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3.5 mb-6">
                   <div className="w-14 h-14 rounded-2xl bg-[#167E83]/10 border border-[#167E83]/20 flex items-center justify-center text-[#167E83] shrink-0 font-serif text-2xl font-bold">
@@ -652,7 +652,7 @@ export const AboutPage: React.FC = () => {
             </div>
 
             {/* Advisory & Governance Formation Status */}
-            <div className="p-8 sm:p-10 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/30 shadow-xl flex flex-col justify-between relative overflow-hidden">
+            <div className="p-5 sm:p-8 lg:p-10 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/30 shadow-xl flex flex-col justify-between relative overflow-hidden">
               <div
                 className="absolute -top-16 -right-16 w-48 h-48 bg-[#167E83]/20 rounded-full blur-2xl pointer-events-none"
                 aria-hidden="true"
@@ -705,7 +705,7 @@ export const AboutPage: React.FC = () => {
           </div>
 
           {/* Action CTAs */}
-          <div className="mt-16 p-8 sm:p-10 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/40 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="mt-16 p-6 sm:p-10 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/40 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="font-serif text-2xl font-semibold text-white mb-2">
                 Explore Our Programs & Priorities

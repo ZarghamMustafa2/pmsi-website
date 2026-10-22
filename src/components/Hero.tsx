@@ -21,19 +21,19 @@ export const Hero: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Institutional Tagline & Scope Badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.07] border border-white/15 backdrop-blur-sm mb-8 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#D8A85B] animate-pulse" />
-            <span className="text-xs sm:text-sm font-semibold tracking-wider uppercase text-slate-200">
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2.5 px-3.5 sm:px-4 py-1.5 rounded-2xl sm:rounded-full bg-white/[0.07] border border-white/15 backdrop-blur-sm mb-6 sm:mb-8 shadow-sm text-center max-w-full">
+            <span className="w-2 h-2 rounded-full bg-[#D8A85B] animate-pulse shrink-0" />
+            <span className="text-[11px] sm:text-xs md:text-sm font-semibold tracking-wider uppercase text-slate-200">
               Pakistan Minorities Support Initiative
             </span>
-            <span className="text-slate-400">|</span>
-            <span className="text-xs sm:text-sm font-medium text-[#D8A85B]">
+            <span className="text-slate-400 hidden sm:inline">|</span>
+            <span className="text-[11px] sm:text-xs md:text-sm font-medium text-[#D8A85B] block sm:inline">
               Protecting Rights. Empowering Communities. Restoring Hope.
             </span>
           </div>
 
           {/* Primary Heading (Exact wording from specification) */}
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-[1.12] mb-5">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white leading-[1.15] mb-5">
             Protecting Dignity.{' '}
             <span className="italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#D8A85B]">
               Advancing Equality.
@@ -44,8 +44,14 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* Supporting Focus Statement (Clearly visible focus areas) */}
-          <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#167E83]/20 border border-[#1DA0A6]/30 text-[#D8A85B] text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm">
-            <span>Minority Rights • Humanitarian Protection • Education • Inclusive Development</span>
+          <div className="inline-flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-2xl sm:rounded-full bg-[#167E83]/20 border border-[#1DA0A6]/30 text-[#D8A85B] text-[11px] sm:text-xs md:text-sm font-semibold tracking-wide uppercase mb-6 backdrop-blur-sm text-center max-w-full">
+            <span>Minority Rights</span>
+            <span>•</span>
+            <span>Humanitarian Protection</span>
+            <span className="hidden sm:inline">•</span>
+            <span>Education</span>
+            <span>•</span>
+            <span>Inclusive Development</span>
           </div>
 
           {/* Refined Supporting Description */}
@@ -75,7 +81,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Programmatic Pillars Highlight Grid (Text & Icon Architecture - No Photos) */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 text-left pt-8 border-t border-white/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 text-left pt-8 border-t border-white/10">
             <Link
               to="/programs/minority-rights"
               className="h-full flex flex-col justify-between p-4 sm:p-5 rounded-xl bg-white/[0.05] border border-white/10 backdrop-blur-sm hover:border-[#D8A85B] hover:bg-white/[0.08] transition-all group"

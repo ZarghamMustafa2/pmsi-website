@@ -329,7 +329,7 @@ ${formData.message}`;
 
           {/* Contact Form (7 cols) */}
           <div className="lg:col-span-7">
-            <div className="p-8 sm:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-md">
+            <div className="p-5 sm:p-8 lg:p-10 rounded-2xl bg-white border border-slate-200/90 shadow-md">
               {serverStatus === 'sent' && (
                 <div className="p-6 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 mb-8 space-y-3">
                   <div className="flex items-center gap-2.5 font-bold text-base text-emerald-950">
@@ -531,17 +531,17 @@ ${formData.message}`;
                   </label>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#125e62] hover:from-[#1DA0A6] hover:to-[#167E83] shadow-md transition-all disabled:opacity-50"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#125e62] hover:from-[#1DA0A6] hover:to-[#167E83] shadow-md transition-all disabled:opacity-50 text-center"
                   >
                     <span>{isSubmitting ? 'Verifying with Server...' : 'Send Message'}</span>
                     <Send className="w-4 h-4 text-[#D8A85B]" />
                   </button>
 
-                  <div className="flex items-center gap-1.5 text-xs text-slate-400">
+                  <div className="flex items-center justify-center sm:justify-start gap-1.5 text-xs text-slate-400">
                     <Lock className="w-3.5 h-3.5" />
                     <span>Secure Transmission</span>
                   </div>

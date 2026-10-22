@@ -75,10 +75,10 @@ export const FocusAreas: React.FC = () => {
   ];
 
   return (
-    <section id="focus-areas" className="py-24 bg-white text-[#12304A] border-b border-slate-200">
+    <section id="focus-areas" className="py-12 sm:py-20 lg:py-24 bg-white text-[#12304A] border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
             <span className="text-xs font-bold uppercase tracking-widest text-[#167E83]">
@@ -105,7 +105,7 @@ export const FocusAreas: React.FC = () => {
             return (
               <div
                 key={card.id}
-                className="group relative flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 hover:border-[#167E83] transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-[#12304A]/5 hover:-translate-y-1"
+                className="group relative flex flex-col justify-between p-5 sm:p-7 md:p-8 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 hover:border-[#167E83] transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-[#12304A]/5 hover:-translate-y-1"
               >
                 {/* Top Bar with Number & Category Tag */}
                 <div>
@@ -150,17 +150,17 @@ export const FocusAreas: React.FC = () => {
         </div>
 
         {/* Donor Journey Links */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-10 sm:mt-12">
           <Link
             to="/programs"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#167E83] hover:bg-[#106064] shadow-md transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#167E83] hover:bg-[#106064] shadow-md transition-all text-center"
           >
             <span>View All Programs & Priorities</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link
             to="/funding-opportunities"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-[#167E83] bg-[#167E83]/10 hover:bg-[#167E83]/20 border border-[#167E83]/30 transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-[#167E83] bg-[#167E83]/10 hover:bg-[#167E83]/20 border border-[#167E83]/30 transition-all text-center"
           >
             <span>Explore Proposed Funding Areas</span>
             <ArrowRight className="w-4 h-4" />

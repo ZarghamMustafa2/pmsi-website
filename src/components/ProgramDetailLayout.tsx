@@ -75,12 +75,12 @@ export const ProgramDetailLayout: React.FC<ProgramDetailLayoutProps> = ({ progra
       </section>
 
       {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Main Editorial Narrative (8 cols) */}
-          <div className="lg:col-span-8 space-y-12">
+          <div className="lg:col-span-8 space-y-8 sm:space-y-12">
             {/* 1. The Humanitarian Problem */}
-            <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
+            <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-700">
                   <AlertCircle className="w-5 h-5" />
@@ -103,7 +103,7 @@ export const ProgramDetailLayout: React.FC<ProgramDetailLayoutProps> = ({ progra
             </section>
 
             {/* 2. The Affected Community */}
-            <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
+            <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-[#167E83]/10 border border-[#167E83]/20 flex items-center justify-center text-[#167E83]">
                   <Users2 className="w-5 h-5" />
@@ -137,7 +137,7 @@ export const ProgramDetailLayout: React.FC<ProgramDetailLayoutProps> = ({ progra
             </section>
 
             {/* 3. Why Assistance Matters */}
-            <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm relative overflow-hidden">
+            <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm relative overflow-hidden">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-[#D8A85B]/20 border border-[#D8A85B]/40 flex items-center justify-center text-[#B8893F]">
                   <HeartHandshake className="w-5 h-5" />
@@ -165,7 +165,7 @@ export const ProgramDetailLayout: React.FC<ProgramDetailLayoutProps> = ({ progra
             </section>
 
             {/* 4. PMSI's Proposed Response: Strategic Priorities */}
-            <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
+            <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-[#12304A]/10 border border-[#12304A]/20 flex items-center justify-center text-[#12304A]">
                   <Target className="w-5 h-5" />
@@ -201,7 +201,7 @@ export const ProgramDetailLayout: React.FC<ProgramDetailLayoutProps> = ({ progra
             </section>
 
             {/* Proposed Areas of Intervention */}
-            <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
+            <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-[#167E83]/10 border border-[#167E83]/20 flex items-center justify-center text-[#167E83]">
                   <Compass className="w-5 h-5" />
@@ -239,7 +239,7 @@ export const ProgramDetailLayout: React.FC<ProgramDetailLayoutProps> = ({ progra
             </section>
 
             {/* 5. Intended Social Benefits */}
-            <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
+            <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-700">
                   <Sparkles className="w-5 h-5" />
@@ -273,7 +273,7 @@ export const ProgramDetailLayout: React.FC<ProgramDetailLayoutProps> = ({ progra
           {/* Sticky Sidebar: Partnership & Donor Journey (4 cols) */}
           <div className="lg:col-span-4 space-y-6 sticky top-28">
             {/* 6. Potential Partnership Opportunities Card */}
-            <div className="p-7 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/40 shadow-xl relative overflow-hidden">
+            <div className="p-5 sm:p-7 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/40 shadow-xl relative overflow-hidden">
               <div
                 className="absolute -top-12 -right-12 w-32 h-32 bg-[#167E83]/30 rounded-full blur-2xl pointer-events-none"
                 aria-hidden="true"

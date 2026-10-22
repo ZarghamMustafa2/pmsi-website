@@ -151,13 +151,13 @@ export const ProjectDetailPage: React.FC = () => {
       </section>
 
       {/* Main Content Area */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           {/* Main Editorial Content (8 cols) */}
-          <div className="lg:col-span-8 space-y-10">
+          <div className="lg:col-span-8 space-y-8 sm:space-y-10">
             {/* Formal Proposal Dossier Callout Banner (if proposal available) */}
             {project.proposalAvailable && (
-              <section className="bg-gradient-to-r from-[#12304A] to-[#164366] text-white p-7 sm:p-8 rounded-2xl border border-[#D8A85B]/40 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <section className="bg-gradient-to-r from-[#12304A] to-[#164366] text-white p-5 sm:p-8 rounded-2xl border border-[#D8A85B]/40 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                 <div className="space-y-2">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D8A85B]/20 border border-[#D8A85B]/40 text-[#D8A85B] text-xs font-bold uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5" />
@@ -172,7 +172,7 @@ export const ProjectDetailPage: React.FC = () => {
                 </div>
                 <Link
                   to={`/projects/${project.slug}/proposal`}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold text-[#12304A] bg-[#D8A85B] hover:bg-[#ECD29E] transition-all shadow-md shrink-0 font-medium"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold text-[#12304A] bg-[#D8A85B] hover:bg-[#ECD29E] transition-all shadow-md shrink-0 font-medium text-center"
                 >
                   <FileText className="w-4 h-4" />
                   <span>Read Full Proposal</span>
@@ -182,7 +182,7 @@ export const ProjectDetailPage: React.FC = () => {
             )}
 
             {/* 1. Humanitarian Background */}
-            <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
+            <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-4">
               <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#167E83]">
                 <Layers className="w-4 h-4" />
                 <span>Context & Strategic Rationale</span>
@@ -199,7 +199,7 @@ export const ProjectDetailPage: React.FC = () => {
             </section>
 
             {/* 2. Objectives */}
-            <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
+            <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
               <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#167E83]">
                 <Target className="w-4 h-4" />
                 <span>Strategic Roadmap</span>
@@ -223,7 +223,7 @@ export const ProjectDetailPage: React.FC = () => {
             </section>
 
             {/* 3. Planned or Completed Activities */}
-            <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
+            <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
               <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#167E83]">
                 <Calendar className="w-4 h-4" />
                 <span>
@@ -259,7 +259,7 @@ export const ProjectDetailPage: React.FC = () => {
             </section>
 
             {/* 4. Expected or Verified Outcomes */}
-            <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
+            <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-5">
               <div className="flex items-center gap-2.5 text-xs font-bold uppercase tracking-wider text-[#D8A85B]">
                 <Sparkles className="w-4 h-4" />
                 <span>{isCompleted ? 'Verified Social Impact' : 'Expected Outcomes & Social Impact'}</span>
@@ -284,7 +284,7 @@ export const ProjectDetailPage: React.FC = () => {
 
             {/* 5. U.S. Corporate Philanthropy & Funding Opportunities (Informational Research Directory) */}
             {project.corporatePhilanthropy && (
-              <section className="bg-white p-8 sm:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-8">
+              <section className="bg-white p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200/90 shadow-sm space-y-8">
                 {/* Header & Context */}
                 <div className="space-y-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -307,7 +307,7 @@ export const ProjectDetailPage: React.FC = () => {
                 </div>
 
                 {/* Prominent Legal Disclaimer & Non-Affiliation Transparency Notice */}
-                <div className="p-5 sm:p-6 rounded-2xl bg-amber-50/90 border-2 border-amber-300 text-amber-950 space-y-2">
+                <div className="p-4 sm:p-6 rounded-2xl bg-amber-50/90 border-2 border-amber-300 text-amber-950 space-y-2">
                   <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-900">
                     <ShieldAlert className="w-4 h-4 text-amber-700 shrink-0" />
                     <span>Prospective Research Reference & Transparency Notice</span>
@@ -370,7 +370,7 @@ export const ProjectDetailPage: React.FC = () => {
                 </div>
 
                 {/* Dedicated Action Box Emphasizing Project Alignment, USD $30,000, Activities, and Discuss Funding Partnership CTA */}
-                <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-br from-[#12304A] to-[#164366] text-white flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-md">
+                <div className="p-5 sm:p-7 rounded-2xl bg-gradient-to-br from-[#12304A] to-[#164366] text-white flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-md">
                   <div className="space-y-2 max-w-xl">
                     <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#D8A85B]">
                       <Sparkles className="w-3.5 h-3.5" />
@@ -384,10 +384,10 @@ export const ProjectDetailPage: React.FC = () => {
                     </p>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                  <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
                     <Link
                       to={`/partnership-inquiry?project=${encodeURIComponent(project.title)}&category=${encodeURIComponent(project.category)}`}
-                      className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold text-[#12304A] bg-[#D8A85B] hover:bg-[#ECD29E] transition-all shadow-md font-medium"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold text-[#12304A] bg-[#D8A85B] hover:bg-[#ECD29E] transition-all shadow-md font-medium text-center"
                     >
                       <Handshake className="w-4 h-4" />
                       <span>Discuss Funding Partnership</span>
@@ -395,7 +395,7 @@ export const ProjectDetailPage: React.FC = () => {
                     </Link>
                     <Link
                       to={`/projects/${project.slug}/proposal`}
-                      className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-colors"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 transition-colors text-center"
                     >
                       <FileText className="w-4 h-4 text-slate-200" />
                       <span>View Full Proposal</span>
@@ -409,7 +409,7 @@ export const ProjectDetailPage: React.FC = () => {
           {/* Sidebar Specifications & Donor CTA (4 cols) */}
           <div className="lg:col-span-4 space-y-8 lg:sticky lg:top-28">
             {/* Metadata Card */}
-            <div className="p-7 sm:p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-6">
+            <div className="p-5 sm:p-7 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-6">
               <h3 className="font-serif text-lg font-bold text-[#12304A] border-b border-slate-100 pb-3">
                 Project Profile
               </h3>
@@ -543,7 +543,7 @@ export const ProjectDetailPage: React.FC = () => {
             </div>
 
             {/* Prominent Funding Invitation (Section 6 Requirement) */}
-            <div className="p-7 sm:p-8 rounded-3xl bg-gradient-to-br from-[#12304A] to-[#164366] text-white border border-[#D8A85B]/40 shadow-xl space-y-4">
+            <div className="p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#12304A] to-[#164366] text-white border border-[#D8A85B]/40 shadow-xl space-y-4">
               <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#D8A85B]">
                 <Sparkles className="w-4 h-4" />
                 <span>Funding Opportunity</span>

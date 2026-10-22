@@ -261,7 +261,7 @@ export const PartnerWithUsPage: React.FC = () => {
             </div>
 
             <div className="lg:col-span-5 space-y-4">
-              <div className="p-8 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/30 shadow-xl">
+              <div className="p-5 sm:p-8 rounded-2xl bg-[#12304A] text-white border border-[#167E83]/30 shadow-xl">
                 <h3 className="font-serif text-xl sm:text-2xl font-semibold text-white mb-4">
                   Our Institutional Baseline
                 </h3>
@@ -291,9 +291,9 @@ export const PartnerWithUsPage: React.FC = () => {
       </section>
 
       {/* Section B: Areas for Potential Collaboration (5 Categories) */}
-      <section className="py-20 bg-[#F7F9FA] border-b border-slate-200">
+      <section className="py-12 sm:py-20 bg-[#F7F9FA] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14">
+          <div className="max-w-3xl mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
               <span className="text-xs font-bold uppercase tracking-widest text-[#167E83]">
@@ -318,7 +318,7 @@ export const PartnerWithUsPage: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="p-8 rounded-2xl bg-white border border-slate-200/90 hover:border-[#167E83] transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between"
+                  className="p-5 sm:p-7 md:p-8 rounded-2xl bg-white border border-slate-200/90 hover:border-[#167E83] transition-all duration-300 shadow-sm hover:shadow-lg flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-6">
@@ -357,9 +357,9 @@ export const PartnerWithUsPage: React.FC = () => {
       </section>
 
       {/* Section C: Partnership Opportunities (5 Forms) */}
-      <section className="py-20 bg-white border-b border-slate-200">
+      <section className="py-12 sm:py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-14">
+          <div className="max-w-3xl mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
               <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
               <span className="text-xs font-bold uppercase tracking-widest text-[#167E83]">
@@ -385,7 +385,7 @@ export const PartnerWithUsPage: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="p-8 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 hover:border-[#167E83] transition-all duration-300 hover:shadow-sm"
+                  className="p-5 sm:p-7 md:p-8 rounded-2xl bg-[#F7F9FA] border border-slate-200/90 hover:border-[#167E83] transition-all duration-300 hover:shadow-sm"
                 >
                   <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-[#167E83] mb-5 shadow-sm">
                     <Icon className="w-5 h-5" />
@@ -406,9 +406,9 @@ export const PartnerWithUsPage: React.FC = () => {
       </section>
 
       {/* Section D: Responsible Collaboration */}
-      <section className="py-20 bg-[#12304A] text-white border-b border-white/10 relative overflow-hidden bg-grid-dark">
+      <section className="py-12 sm:py-20 bg-[#12304A] text-white border-b border-white/10 relative overflow-hidden bg-grid-dark">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-          <div className="max-w-3xl mb-14">
+          <div className="max-w-3xl mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
               <ShieldCheck className="w-3.5 h-3.5 text-[#D8A85B]" />
               <span className="text-xs font-bold uppercase tracking-widest text-slate-200">
@@ -434,7 +434,7 @@ export const PartnerWithUsPage: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="p-7 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:border-[#167E83]/80 transition-colors"
+                  className="p-5 sm:p-7 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-sm hover:border-[#167E83]/80 transition-colors"
                 >
                   <div className="w-10 h-10 rounded-lg bg-[#167E83]/20 border border-[#167E83]/40 flex items-center justify-center text-[#1DA0A6] mb-5">
                     <Icon className="w-5 h-5" />
@@ -465,9 +465,9 @@ export const PartnerWithUsPage: React.FC = () => {
       </section>
 
       {/* Section E: Public Website FAQ Section */}
-      <section id="faq" className="py-20 bg-white border-b border-slate-200">
+      <section id="faq" className="py-12 sm:py-20 bg-white border-b border-slate-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-14">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
               <HelpCircle className="w-3.5 h-3.5 text-[#167E83]" />
               <span className="text-xs font-bold uppercase tracking-widest text-[#167E83]">
@@ -499,7 +499,7 @@ export const PartnerWithUsPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => toggleFaq(index)}
-                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-serif text-base sm:text-lg font-semibold text-[#12304A] hover:text-[#167E83] transition-colors"
+                    className="w-full px-5 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between gap-4 font-serif text-base sm:text-lg font-semibold text-[#12304A] hover:text-[#167E83] transition-colors"
                     aria-expanded={isOpen}
                   >
                     <span>{item.question}</span>
@@ -511,7 +511,7 @@ export const PartnerWithUsPage: React.FC = () => {
                   </button>
 
                   {isOpen && (
-                    <div className="px-6 pb-6 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 bg-white">
+                    <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-200/60 bg-white">
                       <p>{item.answer}</p>
                     </div>
                   )}
@@ -537,9 +537,9 @@ export const PartnerWithUsPage: React.FC = () => {
       </section>
 
       {/* Section F: Direct Partnership Inquiry Invitation CTA */}
-      <section className="py-20 bg-[#F7F9FA]">
+      <section className="py-12 sm:py-20 bg-[#F7F9FA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-12 lg:p-16 rounded-3xl bg-[#12304A] text-white border border-[#167E83]/40 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="p-6 sm:p-10 lg:p-16 rounded-3xl bg-[#12304A] text-white border border-[#167E83]/40 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-semibold uppercase tracking-wider text-[#D8A85B] mb-4">
                 <Handshake className="w-4 h-4" />
@@ -548,23 +548,23 @@ export const PartnerWithUsPage: React.FC = () => {
               <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-white leading-tight mb-4">
                 Ready to Explore a Humanitarian Partnership?
               </h2>
-              <p className="text-base text-slate-300 leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
                 Connect directly with PMSI leadership to discuss proposed project collaborations,
                 institutional grant support, or joint humanitarian assessments.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 w-full lg:w-auto shrink-0">
+            <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 w-full lg:w-auto shrink-0">
               <Link
                 to="/partnership-inquiry"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#12585c] hover:from-[#1DA0A6] hover:to-[#167E83] border border-[#167E83] shadow-lg transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#12585c] hover:from-[#1DA0A6] hover:to-[#167E83] border border-[#167E83] shadow-lg transition-all text-center"
               >
                 <span>Submit Partnership Inquiry</span>
                 <ArrowRight className="w-4 h-4 text-[#D8A85B]" />
               </Link>
               <Link
                 to="/funding-opportunities"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold text-[#12304A] bg-[#F7F9FA] hover:bg-white shadow-md transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-semibold text-[#12304A] bg-[#F7F9FA] hover:bg-white shadow-md transition-all text-center"
               >
                 <span>View Proposed Funding Areas</span>
               </Link>

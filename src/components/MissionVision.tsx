@@ -4,7 +4,7 @@ import { Target, Eye, ShieldCheck, HeartHandshake, Sparkles, ArrowRight } from '
 
 export const MissionVision: React.FC = () => {
   return (
-    <section id="mission-vision" className="py-24 bg-[#12304A] text-white relative overflow-hidden bg-grid-dark">
+    <section id="mission-vision" className="py-12 sm:py-20 lg:py-24 bg-[#12304A] text-white relative overflow-hidden bg-grid-dark">
       {/* Subtle atmospheric accents */}
       <div
         className="absolute top-0 right-1/4 w-96 h-96 bg-[#167E83]/15 rounded-full blur-3xl pointer-events-none"
@@ -17,7 +17,7 @@ export const MissionVision: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/15 mb-4">
             <Sparkles className="w-3.5 h-3.5 text-[#D8A85B]" />
             <span className="text-xs font-bold uppercase tracking-widest text-slate-200">
@@ -40,7 +40,7 @@ export const MissionVision: React.FC = () => {
         {/* Dual Balanced Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
           {/* Mission Card */}
-          <div className="relative flex flex-col justify-between h-full p-8 sm:p-10 rounded-3xl bg-white/[0.04] border border-white/15 backdrop-blur-md shadow-2xl hover:border-[#167E83]/80 transition-all duration-300">
+          <div className="relative flex flex-col justify-between h-full p-5 sm:p-8 lg:p-10 rounded-3xl bg-white/[0.04] border border-white/15 backdrop-blur-md shadow-2xl hover:border-[#167E83]/80 transition-all duration-300">
             <div>
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-3.5">
@@ -62,7 +62,7 @@ export const MissionVision: React.FC = () => {
               </div>
 
               {/* Exact Mission Statement from Specification */}
-              <div className="p-6 sm:p-7 rounded-2xl bg-[#12304A] border border-white/10 mb-6 shadow-inner">
+              <div className="p-4 sm:p-6 rounded-2xl bg-[#12304A] border border-white/10 mb-6 shadow-inner">
                 <p className="font-serif text-lg sm:text-xl md:text-2xl text-white font-normal leading-relaxed italic">
                   "Promoting dignity, equality, protection and meaningful opportunities for vulnerable
                   communities throughout Pakistan."
@@ -85,7 +85,7 @@ export const MissionVision: React.FC = () => {
           </div>
 
           {/* Vision Card */}
-          <div className="relative flex flex-col justify-between h-full p-8 sm:p-10 rounded-3xl bg-white/[0.04] border border-white/15 backdrop-blur-md shadow-2xl hover:border-[#D8A85B]/80 transition-all duration-300">
+          <div className="relative flex flex-col justify-between h-full p-5 sm:p-8 lg:p-10 rounded-3xl bg-white/[0.04] border border-white/15 backdrop-blur-md shadow-2xl hover:border-[#D8A85B]/80 transition-all duration-300">
             <div>
               <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center gap-3.5">
@@ -107,7 +107,7 @@ export const MissionVision: React.FC = () => {
               </div>
 
               {/* Exact Vision Statement from Specification */}
-              <div className="p-6 sm:p-7 rounded-2xl bg-[#12304A] border border-[#D8A85B]/20 mb-6 shadow-inner">
+              <div className="p-4 sm:p-6 rounded-2xl bg-[#12304A] border border-[#D8A85B]/20 mb-6 shadow-inner">
                 <p className="font-serif text-lg sm:text-xl md:text-2xl text-white font-normal leading-relaxed italic">
                   "A Pakistan where every individual, regardless of religion, identity or background,
                   has access to safety, rights, education and opportunity."
@@ -131,10 +131,10 @@ export const MissionVision: React.FC = () => {
         </div>
 
         {/* Action Link to Full About Us Page */}
-        <div className="mt-12 text-center">
+        <div className="mt-10 sm:mt-12 text-center">
           <Link
             to="/about"
-            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 hover:border-[#D8A85B] transition-all duration-200 shadow-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 hover:border-[#D8A85B] transition-all duration-200 shadow-sm text-center"
           >
             <span>Learn More About PMSI, Mission & Core Values</span>
             <ArrowRight className="w-4 h-4 text-[#D8A85B]" />

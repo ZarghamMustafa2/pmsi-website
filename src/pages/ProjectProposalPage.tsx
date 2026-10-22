@@ -99,21 +99,21 @@ export const ProjectProposalPage: React.FC = () => {
       </section>
 
       {/* Floating Action Bar (Sticky for donor convenience) */}
-      <div className="bg-white border-b border-slate-200 py-3.5 sticky top-16 z-30 shadow-xs print:hidden">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
+      <div className="bg-white border-b border-slate-200 py-3.5 relative sm:sticky sm:top-[70px] z-20 shadow-xs print:hidden">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-4">
           <Link
             to={`/projects/${project.slug}`}
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#167E83] hover:text-[#106064]"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4 shrink-0" />
             <span>Return to Project Overview</span>
           </Link>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3 w-full sm:w-auto">
             <button
               type="button"
               onClick={handlePrint}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-300 transition-colors cursor-pointer w-full sm:w-auto"
               title="Print proposal document or save as PDF"
             >
               <Printer className="w-4 h-4 text-slate-600" />
@@ -122,19 +122,19 @@ export const ProjectProposalPage: React.FC = () => {
 
             <Link
               to={`/partnership-inquiry?project=${encodeURIComponent(project.title)}&category=${encodeURIComponent(project.category)}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#12585c] hover:from-[#1DA0A6] hover:to-[#167E83] shadow-xs transition-all"
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#12585c] hover:from-[#1DA0A6] hover:to-[#167E83] shadow-xs transition-all w-full sm:w-auto text-center"
             >
-              <Handshake className="w-4 h-4 text-[#D8A85B]" />
+              <Handshake className="w-4 h-4 text-[#D8A85B] shrink-0" />
               <span>Discuss Funding Partnership</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 shrink-0" />
             </Link>
           </div>
         </div>
       </div>
 
       {/* Formal Document Container */}
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <article className="bg-white rounded-3xl border border-slate-200 shadow-sm p-8 sm:p-12 md:p-16 space-y-12 print:shadow-none print:border-none print:p-0">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+        <article className="bg-white rounded-3xl border border-slate-200 shadow-sm p-5 sm:p-10 md:p-16 space-y-10 sm:space-y-12 print:shadow-none print:border-none print:p-0">
           {/* Document Header Block */}
           <div className="border-b-2 border-slate-900 pb-8 space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

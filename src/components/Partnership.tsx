@@ -8,9 +8,9 @@ interface PartnershipProps {
 
 export const Partnership: React.FC<PartnershipProps> = ({ onExploreClick }) => {
   return (
-    <section id="partnership" className="py-24 bg-white text-[#12304A] border-b border-slate-200">
+    <section id="partnership" className="py-12 sm:py-20 lg:py-24 bg-white text-[#12304A] border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 lg:p-16 rounded-3xl bg-gradient-to-br from-[#12304A] via-[#12304A] to-[#0d2235] text-white shadow-2xl border border-[#167E83]/30 relative overflow-hidden">
+        <div className="p-5 sm:p-10 lg:p-16 rounded-3xl bg-gradient-to-br from-[#12304A] via-[#12304A] to-[#0d2235] text-white shadow-2xl border border-[#167E83]/30 relative overflow-hidden">
           {/* Subtle geometric light effect */}
           <div
             className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 rounded-full bg-[#167E83]/20 blur-3xl pointer-events-none"

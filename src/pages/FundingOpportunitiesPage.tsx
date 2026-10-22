@@ -245,17 +245,17 @@ export const FundingOpportunitiesPage: React.FC = () => {
               rights, education, child welfare, disaster recovery and community empowerment in Pakistan.
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4">
               <Link
                 to="/partnership-inquiry"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#12585c] hover:from-[#1DA0A6] hover:to-[#167E83] border border-[#167E83] shadow-lg transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#12585c] hover:from-[#1DA0A6] hover:to-[#167E83] border border-[#167E83] shadow-lg transition-all text-center"
               >
                 <span>Submit Partnership Inquiry</span>
                 <ArrowRight className="w-4 h-4 text-[#D8A85B]" />
               </Link>
               <Link
                 to="/programs"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-[#12304A] bg-[#F7F9FA] hover:bg-white shadow-md transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-[#12304A] bg-[#F7F9FA] hover:bg-white shadow-md transition-all text-center"
               >
                 <Compass className="w-4 h-4 text-[#167E83]" />
                 <span>Explore All Six Humanitarian Programs</span>
@@ -316,7 +316,7 @@ export const FundingOpportunitiesPage: React.FC = () => {
       </section>
 
       {/* Six Proposed Funding Opportunities */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
@@ -337,7 +337,7 @@ export const FundingOpportunitiesPage: React.FC = () => {
             </div>
 
             {/* Quick Status Filter */}
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex flex-wrap items-center gap-2 shrink-0">
               <span className="text-xs font-semibold text-slate-500">Filter Status:</span>
               <div className="inline-flex rounded-xl bg-slate-200/70 p-1 text-xs">
                 {['All', 'Proposed', 'Under Planning'].map((status) => (
@@ -358,13 +358,13 @@ export const FundingOpportunitiesPage: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {filteredCategories.map((cat) => {
               const Icon = cat.icon;
               return (
                 <div
                   key={cat.id}
-                  className="group relative flex flex-col justify-between p-8 rounded-2xl bg-white border border-slate-200/90 hover:border-[#167E83] transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1"
+                  className="group relative flex flex-col justify-between p-5 sm:p-7 md:p-8 rounded-2xl bg-white border border-slate-200/90 hover:border-[#167E83] transition-all duration-300 shadow-sm hover:shadow-xl hover:-translate-y-1"
                 >
                   <div className="space-y-5">
                     {/* Header: Icon, ID & Status Badge */}
@@ -470,7 +470,7 @@ export const FundingOpportunitiesPage: React.FC = () => {
           </div>
 
           {/* Institutional Next Steps Banner */}
-          <div className="mt-20 p-8 sm:p-12 rounded-3xl bg-[#12304A] text-white border border-[#167E83]/40 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="mt-12 sm:mt-20 p-6 sm:p-10 lg:p-12 rounded-2xl sm:rounded-3xl bg-[#12304A] text-white border border-[#167E83]/40 shadow-xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-semibold uppercase tracking-wider text-[#D8A85B] mb-3">
                 <Building className="w-3.5 h-3.5" />
@@ -487,7 +487,7 @@ export const FundingOpportunitiesPage: React.FC = () => {
 
             <Link
               to="/partnership-inquiry"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-[#12304A] bg-[#F7F9FA] hover:bg-white shadow-md transition-all shrink-0 font-medium"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-[#12304A] bg-[#F7F9FA] hover:bg-white shadow-md transition-all shrink-0 font-medium text-center"
             >
               <span>Submit Partnership Inquiry</span>
               <ArrowRight className="w-4 h-4 text-[#167E83]" />

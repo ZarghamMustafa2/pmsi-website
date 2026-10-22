@@ -401,13 +401,13 @@ export const DonatePage: React.FC = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 shrink-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto shrink-0">
             <a
               href={PMSI_CONTACT.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Confirm contribution with PMSI via WhatsApp at ${PMSI_CONTACT.whatsappNumber}`}
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-[#25D366] hover:bg-[#20ba5a] transition-all shadow-xs"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-[#25D366] hover:bg-[#20ba5a] transition-all shadow-xs text-center"
             >
               <WhatsAppIcon className="w-4 h-4 text-white" />
               <span>Confirm via WhatsApp</span>
@@ -415,7 +415,7 @@ export const DonatePage: React.FC = () => {
 
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-[#12304A] hover:bg-[#167E83] transition-all shadow-xs"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-[#12304A] hover:bg-[#167E83] transition-all shadow-xs text-center"
             >
               <span>Contact Form</span>
               <ArrowRight className="w-4 h-4" />

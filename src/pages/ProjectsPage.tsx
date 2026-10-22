@@ -80,11 +80,11 @@ export const ProjectsPage: React.FC = () => {
             </p>
 
             {/* Tab Quick Filter Bar */}
-            <div className="inline-flex flex-wrap p-1.5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="flex flex-col sm:flex-row flex-wrap sm:inline-flex p-1.5 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md gap-1.5 sm:gap-0 max-w-full">
               <button
                 type="button"
                 onClick={() => handleTabChange('upcoming')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`w-full sm:w-auto justify-center sm:justify-start flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   activeTab === 'upcoming'
                     ? 'bg-[#D8A85B] text-[#12304A] shadow-md font-bold'
                     : 'text-slate-200 hover:text-white hover:bg-white/10'
@@ -102,7 +102,7 @@ export const ProjectsPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => handleTabChange('ongoing')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`w-full sm:w-auto justify-center sm:justify-start flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   activeTab === 'ongoing'
                     ? 'bg-[#167E83] text-white shadow-md font-bold'
                     : 'text-slate-200 hover:text-white hover:bg-white/10'
@@ -120,7 +120,7 @@ export const ProjectsPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => handleTabChange('completed')}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                className={`w-full sm:w-auto justify-center sm:justify-start flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                   activeTab === 'completed'
                     ? 'bg-white text-[#12304A] shadow-md font-bold'
                     : 'text-slate-200 hover:text-white hover:bg-white/10'
@@ -174,11 +174,11 @@ export const ProjectsPage: React.FC = () => {
               {upcomingProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="bg-white rounded-2xl border border-slate-200/90 hover:border-[#D8A85B] shadow-xs hover:shadow-xl transition-all duration-300 p-7 sm:p-8 flex flex-col justify-between group relative overflow-hidden"
+                  className="bg-white rounded-2xl border border-slate-200/90 hover:border-[#D8A85B] shadow-xs hover:shadow-xl transition-all duration-300 p-5 sm:p-7 md:p-8 flex flex-col justify-between group relative overflow-hidden"
                 >
                   <div className="space-y-5">
                     {/* Top Row: Category & Status Badge */}
-                    <div className="flex items-start justify-between gap-2">
+                    <div className="flex flex-wrap sm:flex-nowrap items-start justify-between gap-2">
                       <div className="flex flex-wrap items-center gap-1.5">
                         <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded bg-[#167E83]/10 text-[#167E83] border border-[#167E83]/20">
                           {project.category}
@@ -268,7 +268,7 @@ export const ProjectsPage: React.FC = () => {
                     </Link>
 
                     {project.proposalAvailable ? (
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="grid grid-cols-1 min-[360px]:grid-cols-2 gap-2">
                         <Link
                           to={`/projects/${project.slug}/proposal`}
                           className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-semibold text-[#12304A] bg-[#ECD29E]/50 hover:bg-[#ECD29E]/80 border border-[#D8A85B]/60 transition-colors"
@@ -339,7 +339,7 @@ export const ProjectsPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => handleTabChange('upcoming')}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#12304A] hover:bg-[#167E83] transition-all shadow-xs cursor-pointer"
+                    className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#12304A] hover:bg-[#167E83] transition-all shadow-xs cursor-pointer text-center"
                   >
                     <Sparkles className="w-4 h-4 text-[#D8A85B]" />
                     <span>Explore Upcoming Projects Requiring Funding</span>
@@ -351,7 +351,7 @@ export const ProjectsPage: React.FC = () => {
                 {ongoingProjects.map((project) => (
                   <div
                     key={project.id}
-                    className="bg-white rounded-2xl border border-slate-200/90 hover:border-[#167E83] shadow-xs hover:shadow-xl transition-all p-7 sm:p-8 flex flex-col justify-between group"
+                    className="bg-white rounded-2xl border border-slate-200/90 hover:border-[#167E83] shadow-xs hover:shadow-xl transition-all p-5 sm:p-7 md:p-8 flex flex-col justify-between group"
                   >
                     <div className="space-y-4">
                       <div className="flex items-center justify-between gap-2">
@@ -454,7 +454,7 @@ export const ProjectsPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => handleTabChange('upcoming')}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#12304A] hover:bg-[#167E83] transition-all shadow-xs cursor-pointer"
+                    className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#12304A] hover:bg-[#167E83] transition-all shadow-xs cursor-pointer text-center"
                   >
                     <Sparkles className="w-4 h-4 text-[#D8A85B]" />
                     <span>View Proposed Projects Open for Partnership</span>
@@ -466,7 +466,7 @@ export const ProjectsPage: React.FC = () => {
                 {completedProjects.map((project) => (
                   <div
                     key={project.id}
-                    className="bg-white rounded-2xl border border-slate-200/90 hover:border-emerald-600 shadow-xs hover:shadow-xl transition-all p-7 sm:p-8 flex flex-col justify-between group"
+                    className="bg-white rounded-2xl border border-slate-200/90 hover:border-emerald-600 shadow-xs hover:shadow-xl transition-all p-5 sm:p-7 md:p-8 flex flex-col justify-between group"
                   >
                     <div className="space-y-4">
                       <div className="flex items-center justify-between gap-2">
