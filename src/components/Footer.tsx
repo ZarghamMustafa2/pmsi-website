@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 import { ArrowUp, Shield, Heart } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
+import { PMSI_CONTACT } from '../data/contactData';
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -41,6 +43,20 @@ export const Footer: React.FC = () => {
                 <Heart className="w-3 h-3 fill-[#12304A]" />
                 <span>Donate Now</span>
               </Link>
+            </div>
+
+            {/* Direct WhatsApp Contact */}
+            <div className="pt-1">
+              <a
+                href={PMSI_CONTACT.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Chat with PMSI on WhatsApp at ${PMSI_CONTACT.whatsappNumber}`}
+                className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-[#25D366]/20 border border-[#25D366]/40 hover:bg-[#25D366] hover:text-white transition-all duration-200 shadow-sm group"
+              >
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366] group-hover:text-white transition-colors" />
+                <span>Chat on WhatsApp: <strong className="font-bold tracking-wide">{PMSI_CONTACT.whatsappNumber}</strong></span>
+              </a>
             </div>
           </div>
 
@@ -95,6 +111,17 @@ export const Footer: React.FC = () => {
                 <Link to="/contact" className="text-slate-200 hover:text-[#D8A85B] transition-colors">
                   Contact PMSI
                 </Link>
+              </li>
+              <li>
+                <a
+                  href={PMSI_CONTACT.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 font-semibold hover:underline inline-flex items-center gap-1.5 transition-colors"
+                >
+                  <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
+                  <span>WhatsApp: {PMSI_CONTACT.whatsappNumber}</span>
+                </a>
               </li>
               <li>
                 <Link to="/privacy-policy" className="text-slate-200 hover:text-[#D8A85B] transition-colors">
@@ -175,6 +202,15 @@ export const Footer: React.FC = () => {
           </p>
 
           <div className="flex flex-wrap items-center gap-6">
+            <a
+              href={PMSI_CONTACT.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
+            >
+              <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
+              <span>WhatsApp: {PMSI_CONTACT.whatsappNumber}</span>
+            </a>
             <Link to="/transparency" className="hover:text-[#D8A85B] transition-colors">
               Legal Disclosure
             </Link>

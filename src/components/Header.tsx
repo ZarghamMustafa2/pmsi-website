@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Logo } from './Logo';
 import { Menu, X, ArrowRight, ShieldCheck, Heart } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
+import { PMSI_CONTACT } from '../data/contactData';
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -166,6 +168,18 @@ export const Header: React.FC = () => {
                 <span>Partner With Us</span>
                 <ArrowRight className="w-4 h-4 text-[#D8A85B]" />
               </Link>
+
+              <a
+                href={PMSI_CONTACT.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label={`Chat with PMSI on WhatsApp at ${PMSI_CONTACT.whatsappNumber}`}
+                className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-[#25D366]/20 hover:bg-[#25D366] border border-[#25D366]/40 transition-colors shadow-xs"
+              >
+                <WhatsAppIcon className="w-4 h-4 text-[#25D366] group-hover:text-white" />
+                <span>Chat on WhatsApp ({PMSI_CONTACT.whatsappNumber})</span>
+              </a>
             </div>
           </div>
         </div>

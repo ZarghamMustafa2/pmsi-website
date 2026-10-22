@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { SEO } from '../components/SEO';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
+import { PMSI_CONTACT } from '../data/contactData';
 import {
   Heart,
   Building,
@@ -389,18 +391,36 @@ export const DonatePage: React.FC = () => {
             <div className="w-10 h-10 rounded-xl bg-[#167E83]/10 text-[#167E83] flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
               <Mail className="w-5 h-5" />
             </div>
-            <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
-              After making your contribution, please contact us with your payment details for confirmation.
-            </p>
+            <div>
+              <p className="text-sm sm:text-base text-slate-800 font-medium leading-relaxed">
+                After making your contribution, please contact us with your payment details or deposit slip for confirmation.
+              </p>
+              <p className="text-xs text-slate-500 mt-1">
+                WhatsApp direct line: <strong className="text-slate-700">{PMSI_CONTACT.whatsappNumber}</strong> (instant confirmation)
+              </p>
+            </div>
           </div>
 
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#12304A] hover:bg-[#167E83] transition-all shadow-xs shrink-0"
-          >
-            <span>Contact Us</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <a
+              href={PMSI_CONTACT.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Confirm contribution with PMSI via WhatsApp at ${PMSI_CONTACT.whatsappNumber}`}
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-[#25D366] hover:bg-[#20ba5a] transition-all shadow-xs"
+            >
+              <WhatsAppIcon className="w-4 h-4 text-white" />
+              <span>Confirm via WhatsApp</span>
+            </a>
+
+            <Link
+              to="/contact"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-white bg-[#12304A] hover:bg-[#167E83] transition-all shadow-xs"
+            >
+              <span>Contact Form</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

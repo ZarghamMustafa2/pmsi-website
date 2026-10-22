@@ -12,7 +12,10 @@ import {
   Lock,
   Globe2,
   FileText,
+  ArrowRight,
 } from 'lucide-react';
+import { WhatsAppIcon } from '../components/WhatsAppIcon';
+import { PMSI_CONTACT } from '../data/contactData';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -161,6 +164,59 @@ ${formData.message}`;
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Institutional Information Sidebar (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
+            {/* Direct WhatsApp Outreach Card */}
+            <div className="p-7 sm:p-8 rounded-2xl bg-gradient-to-br from-[#12304A] to-[#164366] text-white border border-[#25D366]/30 shadow-md space-y-4">
+              <div className="flex items-center justify-between gap-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#25D366]/20 border border-[#25D366]/40 text-[#25D366] text-xs font-bold uppercase tracking-wider">
+                  <WhatsAppIcon className="w-3.5 h-3.5" />
+                  <span>WhatsApp Contact</span>
+                </div>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-[#25D366]/20 text-[#25D366] border border-[#25D366]/30">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
+                  <span>Available</span>
+                </span>
+              </div>
+
+              <div>
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                  Direct WhatsApp Outreach
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mt-1">
+                  Connect directly with the Pakistan Minorities Support Initiative team for rapid humanitarian inquiries, partnership questions, or community support coordination.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-xl bg-white/10 border border-white/15 space-y-1">
+                <span className="text-[10px] uppercase font-bold text-slate-300 block tracking-wider">
+                  Official WhatsApp Number
+                </span>
+                <a
+                  href={PMSI_CONTACT.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-lg sm:text-xl font-bold text-white hover:text-[#25D366] transition-colors block"
+                >
+                  {PMSI_CONTACT.whatsappNumber}
+                </a>
+              </div>
+
+              {/* Chat on WhatsApp Button */}
+              <a
+                href={PMSI_CONTACT.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl text-sm font-bold text-white bg-[#25D366] hover:bg-[#20ba59] transition-all shadow-lg shadow-[#25D366]/25 group"
+              >
+                <WhatsAppIcon className="w-5 h-5 text-white" />
+                <span>Chat on WhatsApp</span>
+                <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-0.5 transition-transform" />
+              </a>
+
+              <p className="text-[11px] text-slate-300 text-center leading-relaxed">
+                Clicking opens WhatsApp with a prefilled inquiry message to start a direct dialogue with PMSI.
+              </p>
+            </div>
+
             {/* General Inquiry Info */}
             <div className="p-8 rounded-2xl bg-white border border-slate-200/90 shadow-sm space-y-5">
               <h2 className="font-serif text-2xl font-semibold text-[#12304A]">
@@ -173,6 +229,31 @@ ${formData.message}`;
               </p>
 
               <div className="pt-4 border-t border-slate-100 space-y-4">
+                <div className="flex items-start gap-3.5">
+                  <div className="w-8 h-8 rounded-lg bg-[#25D366]/15 flex items-center justify-center text-[#25D366] shrink-0">
+                    <WhatsAppIcon className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold text-[#12304A] uppercase tracking-wider">
+                      Official WhatsApp Channel
+                    </div>
+                    <div className="text-sm font-semibold text-slate-900 font-mono mt-0.5">
+                      {PMSI_CONTACT.whatsappNumber}
+                    </div>
+                    <div className="text-xs text-slate-600 leading-relaxed mt-0.5">
+                      Direct messaging channel for swift humanitarian inquiries.{' '}
+                      <a
+                        href={PMSI_CONTACT.whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#167E83] font-semibold underline hover:text-[#106064]"
+                      >
+                        Start Chat &rarr;
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="flex items-start gap-3.5">
                   <div className="w-8 h-8 rounded-lg bg-[#167E83]/10 flex items-center justify-center text-[#167E83] shrink-0">
                     <Globe2 className="w-4 h-4" />
@@ -216,12 +297,12 @@ ${formData.message}`;
                   </div>
                   <div>
                     <div className="text-xs font-semibold text-[#12304A] uppercase tracking-wider">
-                      Organizational Contact Notice
+                      Official Communication Notice
                     </div>
                     <div className="text-xs text-slate-500 leading-relaxed">
-                      In strict compliance with our honesty standards, we do not invent physical office maps,
-                      telephone numbers, or unverified staff listings. Dedicated institutional email endpoints
-                      will be published following final institutional domain registration.
+                      PMSI welcomes inquiries through our official WhatsApp contact (+92 307 9661669) and online
+                      inquiry portals. In strict compliance with our truthfulness guidelines, all correspondence is
+                      handled directly by our designated representatives.
                     </div>
                   </div>
                 </div>
@@ -269,9 +350,20 @@ ${formData.message}`;
                     {serverMessage}
                   </p>
                   <div className="pt-2 border-t border-amber-200 flex flex-wrap items-center justify-between gap-3">
-                    <span className="text-xs text-amber-800">
-                      Retain your drafted message text:
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-amber-800">
+                        Immediate alternative:
+                      </span>
+                      <a
+                        href={PMSI_CONTACT.whatsappLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-xs font-bold text-white transition-colors shadow-xs"
+                      >
+                        <WhatsAppIcon className="w-3.5 h-3.5 text-white" />
+                        <span>Chat on WhatsApp</span>
+                      </a>
+                    </div>
                     <button
                       type="button"
                       onClick={copyContactSummary}

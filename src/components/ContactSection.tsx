@@ -11,7 +11,10 @@ import {
   Copy,
   Check,
   Lock,
+  ArrowRight,
 } from 'lucide-react';
+import { WhatsAppIcon } from './WhatsAppIcon';
+import { PMSI_CONTACT } from '../data/contactData';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -155,6 +158,52 @@ ${formData.message}`;
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Institutional Context Sidebar (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
+            {/* Direct WhatsApp Channel Card */}
+            <div className="p-7 rounded-2xl bg-gradient-to-br from-[#12304A] to-[#164366] text-white border border-[#25D366]/30 shadow-md space-y-4">
+              <div className="flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#25D366]/20 border border-[#25D366]/40 text-[#25D366]">
+                  <WhatsAppIcon className="w-3.5 h-3.5" />
+                  <span>Instant WhatsApp Contact</span>
+                </span>
+                <span className="text-[10px] text-slate-300 font-mono">+92 307 9661669</span>
+              </div>
+
+              <div>
+                <h4 className="font-serif text-xl font-bold text-white">
+                  Chat Directly With PMSI
+                </h4>
+                <p className="text-xs text-slate-200 leading-relaxed mt-1">
+                  Connect instantly via WhatsApp for humanitarian partnership inquiries, community updates, or prospective collaboration.
+                </p>
+              </div>
+
+              <div className="p-3.5 rounded-xl bg-white/10 border border-white/15 flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] uppercase font-bold text-slate-300 block">
+                    WhatsApp Number
+                  </span>
+                  <span className="font-mono text-base font-bold text-white">
+                    {PMSI_CONTACT.whatsappNumber}
+                  </span>
+                </div>
+                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#25D366]/20 text-[#25D366]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" />
+                  <span>Available</span>
+                </span>
+              </div>
+
+              <a
+                href={PMSI_CONTACT.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-xs sm:text-sm font-bold text-white bg-[#25D366] hover:bg-[#20ba59] transition-all shadow-md shadow-[#25D366]/20"
+              >
+                <WhatsAppIcon className="w-4 h-4 text-white" />
+                <span>Chat on WhatsApp</span>
+                <ArrowRight className="w-4 h-4 text-white" />
+              </a>
+            </div>
+
             <div className="p-8 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-6">
               <h3 className="font-serif text-xl font-semibold text-[#12304A]">
                 Humanitarian Partnership Protocol
