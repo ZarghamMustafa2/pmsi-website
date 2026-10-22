@@ -1,5 +1,6 @@
 import React from 'react';
-import { Target, Eye, ShieldCheck, HeartHandshake, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Target, Eye, ShieldCheck, HeartHandshake, Sparkles, ArrowRight } from 'lucide-react';
 
 export const MissionVision: React.FC = () => {
   return (
@@ -127,6 +128,17 @@ export const MissionVision: React.FC = () => {
               <span>A future built on equity, safety, justice, and shared opportunity</span>
             </div>
           </div>
+        </div>
+
+        {/* Action Link to Full About Us Page */}
+        <div className="mt-12 text-center">
+          <Link
+            to="/about"
+            className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl text-sm font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 hover:border-[#D8A85B] transition-all duration-200 shadow-sm"
+          >
+            <span>Learn More About PMSI, Mission & Core Values</span>
+            <ArrowRight className="w-4 h-4 text-[#D8A85B]" />
+          </Link>
         </div>
       </div>
     </section>

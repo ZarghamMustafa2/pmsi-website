@@ -19,6 +19,7 @@ import {
   MapPin,
   UserCheck,
   Building2,
+  CheckCircle2,
 } from 'lucide-react';
 
 export const AboutPage: React.FC = () => {
@@ -61,6 +62,39 @@ export const AboutPage: React.FC = () => {
     },
   ];
 
+  const humanitarianObjectives = [
+    {
+      title: 'Defend Minority Rights & Legal Safeguards',
+      description:
+        'Provide pro-bono legal counsel coordination, civil documentation assistance (CNICs/voter registration), and rapid referral mechanisms for religious minority citizens confronting systemic prejudice or arbitrary discrimination.',
+    },
+    {
+      title: 'Expand Education Access for Disadvantaged Children',
+      description:
+        'Support inclusive schooling, textbook distribution, tuition sponsorships, and uniform provision for children from minority and vulnerable backgrounds to overcome intergenerational poverty.',
+    },
+    {
+      title: 'Promote Transgender Inclusion & Social Dignity',
+      description:
+        'Deliver accredited vocational skill-building, basic healthcare linkages, and social advocacy for transgender individuals (Khwajasira community) facing acute ostracization and economic exclusion.',
+    },
+    {
+      title: 'Provide Emergency Flood & Disaster Relief',
+      description:
+        'Mobilize rapid, non-discriminatory humanitarian relief—including clean drinking water, emergency food packs, shelter kits, and medical aid—to families impacted by climate disasters in vulnerable areas of Pakistan.',
+    },
+    {
+      title: 'Safeguard Orphaned & Highly Vulnerable Children',
+      description:
+        'Ensure protective shelters, essential nutrition, psycho-social stability, and educational continuity for orphaned children through strict child safeguarding standards.',
+    },
+    {
+      title: 'Strengthen Community Welfare & Interfaith Accord',
+      description:
+        'Foster grassroots interfaith dialogue, civic literacy, and community self-help networks that advance peaceful coexistence, religious tolerance, and mutual civic dignity across all faith communities.',
+    },
+  ];
+
   const approachPillars = [
     {
       title: 'Community Participation & Local Ownership',
@@ -97,8 +131,8 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="bg-[#F7F9FA] min-h-screen text-[#12304A]">
       <SEO
-        title="About PMSI — Advancing Human Dignity and Equal Opportunities"
-        description="Learn about the Pakistan Minorities Support Initiative (PMSI), our humanitarian mission, vision, core values, and approach to supporting vulnerable communities across Pakistan."
+        title="About Us — Pakistan Minorities Support Initiative (PMSI)"
+        description="Learn about the Pakistan Minorities Support Initiative (PMSI), our humanitarian mission, vision, core values, humanitarian objectives, and governance structure."
       />
 
       {/* Hero Header */}
@@ -119,7 +153,7 @@ export const AboutPage: React.FC = () => {
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm mb-6">
               <Sparkles className="w-4 h-4 text-[#D8A85B]" />
               <span className="text-xs font-bold uppercase tracking-widest text-[#D8A85B]">
-                About PMSI
+                About Us
               </span>
               <span className="text-slate-400">|</span>
               <span className="text-xs text-slate-300">Institutional Foundation</span>
@@ -344,6 +378,57 @@ export const AboutPage: React.FC = () => {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Section E: Humanitarian Objectives */}
+      <section className="py-20 bg-[#F7F9FA] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#167E83]/10 border border-[#167E83]/20 mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#167E83]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-[#167E83]">
+                Strategic Focus
+              </span>
+            </div>
+
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-semibold text-[#12304A] leading-tight mb-5">
+              Humanitarian Objectives
+            </h2>
+
+            <div className="w-20 h-1 bg-gradient-to-r from-[#167E83] to-[#D8A85B] rounded-full mb-6" />
+
+            <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
+              PMSI translates its foundational mission into clear, actionable humanitarian objectives
+              aimed at creating measurable improvements in dignity, security, education, and opportunity.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {humanitarianObjectives.map((obj, idx) => (
+              <div
+                key={idx}
+                className="p-7 rounded-2xl bg-white border border-slate-200/90 shadow-2xs hover:border-[#167E83] transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-mono font-bold text-[#167E83] bg-[#167E83]/10 px-2.5 py-1 rounded-md border border-[#167E83]/20">
+                      OBJECTIVE 0{idx + 1}
+                    </span>
+                    <CheckCircle2 className="w-4 h-4 text-[#D8A85B]" />
+                  </div>
+
+                  <h3 className="font-serif text-lg font-semibold text-[#12304A] mb-2.5">
+                    {obj.title}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {obj.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

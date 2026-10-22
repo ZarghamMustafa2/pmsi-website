@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Logo } from './Logo';
-import { Menu, X, ArrowRight, ShieldCheck, Heart } from 'lucide-react';
+import { Menu, X, ShieldCheck, Heart } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { PMSI_CONTACT } from '../data/contactData';
 
@@ -45,11 +45,11 @@ export const Header: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', to: '/' },
-    { name: 'About', to: '/about' },
+    { name: 'About Us', to: '/about' },
     { name: 'Our Programs', to: '/programs' },
-    { name: 'Projects', to: '/projects' },
-    { name: 'Funding', to: '/funding-opportunities' },
-    { name: 'Transparency', to: '/transparency' },
+    { name: 'Our Projects', to: '/projects' },
+    { name: 'Funding Opportunities', to: '/funding-opportunities' },
+    { name: 'Partner With Us', to: '/partner-with-us' },
     { name: 'Contact', to: '/contact' },
   ];
 
@@ -72,14 +72,14 @@ export const Header: React.FC = () => {
           <Logo variant="light" />
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-1.5 xl:space-x-2" aria-label="Main Navigation">
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-1.5" aria-label="Main Navigation">
             {navLinks.map((link) => {
               const active = isActive(link.to);
               return (
                 <Link
                   key={link.name}
                   to={link.to}
-                  className={`px-3.5 py-2 text-sm font-semibold tracking-wide transition-all rounded-lg ${
+                  className={`px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold tracking-wide transition-all rounded-lg whitespace-nowrap ${
                     active
                       ? 'text-[#D8A85B] bg-white/10 shadow-sm border border-white/10'
                       : 'text-slate-100 hover:text-white hover:bg-white/[0.08]'
@@ -91,18 +91,11 @@ export const Header: React.FC = () => {
             })}
           </nav>
 
-          {/* Prominent Action Buttons: Partner With Us & Donate Now */}
-          <div className="hidden sm:flex items-center space-x-2.5">
-            <Link
-              to="/partner-with-us"
-              className="inline-flex items-center gap-1.5 px-3.5 xl:px-4 py-2 rounded-lg text-xs xl:text-sm font-semibold text-slate-200 hover:text-white hover:bg-white/10 border border-white/15 transition-all duration-200"
-            >
-              <span>Partner With Us</span>
-            </Link>
-
+          {/* Prominent Action Button: Donate Now */}
+          <div className="hidden sm:flex items-center">
             <Link
               to="/donate"
-              className="inline-flex items-center gap-2 px-4.5 py-2 rounded-lg text-xs xl:text-sm font-bold text-[#12304A] bg-[#D8A85B] hover:bg-[#ECD29E] shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[#D8A85B] focus:ring-offset-2 focus:ring-offset-[#12304A]"
+              className="inline-flex items-center gap-2 px-4.5 py-2 rounded-lg text-xs xl:text-sm font-bold text-[#12304A] bg-[#D8A85B] hover:bg-[#ECD29E] shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-[#D8A85B] focus:ring-offset-2 focus:ring-offset-[#12304A] whitespace-nowrap"
             >
               <Heart className="w-3.5 h-3.5 text-[#12304A] fill-[#12304A]" />
               <span>Donate Now</span>
@@ -158,15 +151,6 @@ export const Header: React.FC = () => {
               >
                 <Heart className="w-4 h-4 text-[#12304A] fill-[#12304A]" />
                 <span>Donate Now</span>
-              </Link>
-
-              <Link
-                to="/partner-with-us"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/15 focus:outline-none focus:ring-2 focus:ring-[#D8A85B]"
-              >
-                <span>Partner With Us</span>
-                <ArrowRight className="w-4 h-4 text-[#D8A85B]" />
               </Link>
 
               <a

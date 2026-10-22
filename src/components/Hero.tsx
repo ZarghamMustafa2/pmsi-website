@@ -57,13 +57,13 @@ export const Hero: React.FC = () => {
 
           {/* Action CTAs (Exact button texts from specification) */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5 mb-14">
-            <a
-              href="#mission-vision"
+            <Link
+              to="/about"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-lg text-base font-semibold text-white bg-gradient-to-r from-[#167E83] to-[#126367] hover:from-[#1DA0A6] hover:to-[#167E83] border border-[#1DA0A6]/40 shadow-lg shadow-[#167E83]/30 hover:shadow-xl hover:shadow-[#167E83]/40 transition-all duration-200 hover:-translate-y-0.5"
             >
               <Compass className="w-5 h-5 text-[#D8A85B]" />
               <span>Explore Our Mission</span>
-            </a>
+            </Link>
 
             <Link
               to="/partner-with-us"
