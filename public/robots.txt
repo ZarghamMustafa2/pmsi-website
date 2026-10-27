@@ -1,0 +1,8 @@
+# Robots.txt for Pakistan Minorities Support Initiative (PMSI)
+# Production Website: https://pmsi-website.vercel.app
+
+User-agent: *
+Allow: /
+
+# Sitemap Index
+Sitemap: https://pmsi-website.vercel.app/sitemap.xml

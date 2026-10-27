@@ -97,6 +97,15 @@ export const PartnershipInquiryPage: React.FC = () => {
         }),
       });
 
+      const contentType = response.headers.get('content-type');
+      if (!contentType || !contentType.includes('application/json')) {
+        setServerStatus('unconfigured');
+        setServerMessage(
+          'Automated email transport service is pending serverless configuration. In adherence to PMSI truthfulness standards, inquiries are not falsely reported as sent. Please contact us directly via email or WhatsApp.'
+        );
+        return;
+      }
+
       const result = await response.json().catch(() => ({}));
 
       if (response.status === 200 && result.status === 'sent') {
